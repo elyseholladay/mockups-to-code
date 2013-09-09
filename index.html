@@ -1,0 +1,2008 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Mockups to Code | GDI Austin</title>
+
+		<meta name="description" content="Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+		<meta name="author" content="Girl Develop It">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/print/pdf.css">
+		<link rel="stylesheet" href="css/theme/gdi_elyse.css" id="theme">
+
+	    <!-- Typekit -->
+	    <!-- <script type="text/javascript" src="//use.typekit.net/iit5hog.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+
+		<!-- For syntax highlighting -->
+		 <!-- light editor<link rel="stylesheet" href="lib/css/light.css"> -->
+		<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
+
+		<!-- If use the PDF print sheet so students can print slides-->
+		
+		<link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+	    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<!-- add ?transition=linear# to the URL -->
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+		        <!-- Opening -->
+
+				<section>
+					<h1>Mockups to Code</h1>
+
+				</section>
+
+				<!-- Outline -->
+				<section>
+					<ul>
+						<li class="sectiontitle">Let's Draw Boxes~</li>
+						<li class="sectiontitle">HTML Theory</li>
+							<ul>
+								<li>What <em>is</em> a div anyway?</li>
+								<li>Display States</li>
+								<li>The Box Model</li>
+								<li>Margin Collapsing</li>
+								<li>Box Sizing</li>
+							</ul>
+						<li class="sectiontitle">Name All the Things</li>
+						<ul>
+							<li>Basic Naming</li>
+							<li>A Word about DRY</li>
+							<li>Page Structure Markup</li>
+						</ul>
+						<li class="sectiontitle">Making it Pretty!</li>
+					</ul>
+				</section>
+
+				<section>
+					<ul>
+						<li class="sectiontitle">float: left;</li>
+							<ul>
+								<li>What is a Float?</li>
+								<li>Floating is Weird: Widths</li>
+								<li>Floating Exercises</li>
+								<li>No, it's Really Weird: Clearing</li>
+								<li>The Clearfix</li>
+							</ul>
+						<li class="sectiontitle">Laying Out</li>
+						<li class="sectiontitle">CSS In Use</li>
+							<ul>
+								<li>Classes &amp; IDs</li>
+								<li>Specificity</li>
+								<li>Organizing &amp; Commenting</li>
+								<li>OOCSS, SMACSS, &amp; DRY</li>
+								<li>CSS File Organization</li>
+								<li>A Brief Note about SASS</li>
+							</ul>
+						<li class="sectiontitle">Making it Pretty Part 2</li>
+							<ul>
+								<li>Stuff</li>
+								<li>Modules: Wrappers &amp; Navs</li>
+								<li>Pictures</li>
+								<li>CSS3</li>
+							</ul>
+					</ul>
+				</section>
+
+				<!-- Actual Content! -->
+				<section data-state="group sect-boxes">
+
+					<h1>Boxes!</h1>
+
+					
+				</section>
+
+				<section>
+					<br/><br/><br/><br/><br/>
+					<h2>Web layouts are made of them.</h2>
+					<!-- press 's' to reveal notes -->
+					<aside class="notes">
+						Let's all look at our mockups and identify some basic parts of these layouts. Draw/outline those on your mockups!
+						header w/ logo and nav, banner, about, hours/directions, footer. these are the main sections.
+						Next we're going to talk about the basic HTML building blocks that are going to make up the boxes we outlined earlier.
+					</aside>
+				</section>
+
+				<section data-state="group sect-html">
+					<h1>HTML Theory</h1>
+					<h3>Divs, Display States, Box Model, Margins &amp; Box Sizing</h3>
+				</section>
+
+				<!-- What is a Div? -->
+				<section>
+					<h2>What is a Div, Anyway?</h2>
+
+					<p class="fragment">The building blocks of HTML layout are <code>&lt;div&gt;</code>s—generic containers that have no semantic meaning. You can think of a <code>&lt;div&gt;</code> as a rectangular box.</p>
+
+					<p class="fragment">Compare to the semantically named <code>&lt;p&gt;</code> (paragraph), or <code>&lt;a&gt; </code>being an anchor link.</p>
+
+					<p class="fragment">A <code>&lt;div&gt;</code> with nothing in it is an "invisible" box. A <code>&lt;div&gt;</code> with no CSS applied only has the dimensions of its content.</p>
+
+					<aside class="notes">You can give a div height, width, margin, padding, or a position, in terms of layout.</aside>
+				</section>
+
+
+				<section>
+					<h2>A Wild Div Appears</h2>
+					
+					<p>Let's take a look at some basic, vanilla <code>&lt;div&gt;</code>s.*</p>
+
+				<pre>
+              <code contenteditable class="html">
+  &lt;div&gt;
+    header
+    &lt;span&gt;logo&lt;/span&gt;
+    &lt;div&gt;nav&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;banner&lt;/div&gt;
+  &lt;div&gt;about&lt;/div&gt;
+  &lt;div&gt;hours and directions&lt;/div&gt;
+  &lt;div&gt;footer&lt;/div&gt;
+              </code>
+            </pre>
+
+				<pre>
+              <code contenteditable class="css">
+ div {border: 1px solid blue;}
+              </code>
+            </pre>
+
+            <p>* and a sad, lonely span.</p>
+
+					<aside class="notes">
+						There's one for each section of our mockup that we drew on earlier. Load it up in your editor and your browser. In the browser we should see those four words, each on a new line, with a blue outline. If you pull up your style.css file you'll see div {border: 1px solid blue;} which is giving them the borders.
+	
+					</aside>
+
+				</section>
+
+				<section>
+					<h2>Display Style</h2>
+
+					<p><code>&lt;div&gt;</code>s (and other HTML elements) typically have three display states.</p>
+					<pre class="fragment"><code contenteditable class="css">
+  display: block;
+  display: inline;
+  display: inline-block;
+					</code></pre>
+					<aside class="notes">There are many more display states (provide link) but these are the most commonly used</aside>
+
+				</section>
+
+				<section>
+					<h2>display: block;</h2>
+
+					<p>By default, a <code>&lt;div&gt;</code> is block level.</p>
+
+					<p>Block level elements begin on a new line on a page and occupy 100% of the available width (on the page or of its parent element).</p>
+
+					<p class="fragment">A block level element will be as wide as it's available space and as tall as the content that is inside it.</p>
+
+					<p class="fragment">That's what our divs are doing right now: they are taking up the full page width and the height of the content that is inside them.</p>
+
+					<aside class="notes">
+						Divs can get height, width, etc.
+					</aside>
+
+				</section>
+
+				<section>
+					<h2>display: inline;</h2>
+					<p>An inline element can only have the height or width of what is inside it—you cannot apply height or width to them in CSS—, and displays "in the line" of text.</p>
+
+					<p class="fragment">An inline element can wrap some text inside a paragraph <span style="background:rgb(158, 202, 105);color:white;">like this</span> without disrupting the flow of that paragraph.</p>
+
+					<pre class="fragment"><code contenteditable class="html">
+  &lt;span&gt;like this&lt;/span&gt;
+					</code></pre>
+
+
+					<p class="fragment">
+					The <code>&lt;a&gt;</code> element is the most common inline element. <code>&lt;span&gt;</code> is the second most common, typically used for wrapping some content without adding a block-level element like a <code>&lt;div&gt;</code>. </p>
+				</section>
+
+				<section>
+					<h2>display: inline-block;</h2>
+					<div>inline-block is a hybrid of these two. An inline-block element can have height and width, but it doesn't start on a new line and doesn't break the flow: <div style="display:inline-block;width:200px;height:100px;background:rgb(158, 202, 105);color:white;">this example</div> is 200px wide and 100px tall but the rest of this paragraph continues to flow around it, as if it were an inline element.</div>
+				</section>
+
+				<section>
+					<h2>DIY</h2>
+
+					<pre class="codepen" data-height="300" data-type="result" data-href="Kvgtb" data-user="elyseholladay" data-safe="true"><code></code><a href="http://codepen.io/elyseholladay/pen/Kvgtb">Check out this Pen!</a></pre>
+					<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+					<aside class="notes">
+						Remember, inline elements can't get a width or height! But they can get visual styles. Inline-block can get a width/height. Block elements can get a width but they won't flow next to each other as every block div starts on a new line.
+					</aside>
+				</section>
+
+				<section>
+					<h1>The Box Model</h1>
+				</section>
+
+				<section>
+					<h2>What is the Box Model?</h2>
+
+					<p>The box model is the specification that defines how a box and its attributes relate to each other.</p>
+
+					<p class="fragment">It consists of four parts, in order: Margin, Border, Padding, Content.</p>
+					<img src="http://learn.shayhowe.com/assets/courses/html-css-guide/box-model/box-model.png" alt="" class="fragment">
+				</section>
+
+				<section>
+					<h2>border</h2>
+					<p class="fragment">The border surrounds the box.</p>
+
+					<h2 class="fragment">margin</h2>
+					<p class="fragment">Margin is the space outside the <code>&lt;div&gt;</code>'s border; this space typically separates it from other <code>&lt;div&gt;</code>s.</p>
+
+					<h2 class="fragment">padding</h2>
+					<p class="fragment">Padding is the space inside the <code>&lt;div&gt;</code>'s border; this space usually gives the text or images inside a <code>&lt;div&gt;</code> some room away from the border. </p>
+				</section>
+
+				<section>
+					<h2>DIY</h2>
+
+					<p>Let's add some margin and padding and see how they affect our <code>&lt;div&gt;</code>s and our <code>&lt;span&gt;</code>.</p>
+
+					<pre class="codepen" data-height="300" data-type="result" data-href="dlJtH" data-user="elyseholladay" data-safe="true"><code></code><a href="http://codepen.io/elyseholladay/pen/dlJtH">Check out this Pen!</a></pre>
+					<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+					<aside class="notes">
+						cool: now all our divs are appearing with space between them!
+					</aside>
+				</section>
+
+				<section>
+					<h2>But Wait...</h2>
+
+					<p>Anyone noticing some weird things about this?</p>
+					<ol>
+						<li class="fragment">Why is the margin on the left and right the same as the margin between each of our <code>&lt;div&gt;</code>s? Shouldn't it be bigger?</li>
+						<li class="fragment">Why is our 400px wide span actually 440px wide??</li>
+						<li class="fragment">...and how can I tell!?</li>
+					</ol>
+
+				</section>
+
+				<section>
+					<h2>A Brief Note on Dev Inspector!</h2>
+
+					<img src="images/devinspector.jpg" alt="">
+
+					<aside class="notes">
+						mention: cursor overlay of the box model, selecting divs and seeing their CSS, debugging
+					</aside>
+				</section>
+
+				<section>
+					<h2>Margin Collapsing</h2>
+					<p>"In CSS, <strong>the adjoining margins of two or more boxes can combine to form a single margin</strong>. Margins that combine this way are said to collapse, and the resulting combined margin is called a collapsed margin."
+					</p>
+					<p>
+						--<a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">w3 Spec on Collapsing Margins</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Margin Math</h2>
+					<p>Our stacked divs all have a bottom margin of 40px and a top margin of 40px.</p>
+					<p>When those two margins touch, instead of adding 40+40, it takes the larger of the two margins.</p>
+					<p>(In our case, they're the same, but if one was 10 and one was 20, it'd be 20.)</p>
+				</section>
+
+				<section>
+					<p style="font-style: italic; text-align: center;">as one astute stackoverflow commenter put it,</p>
+					<h4><a href="http://stackoverflow.com/questions/3069921/what-is-the-point-of-css-collapsing-margins">"What is the point of CSS collapsing margins?"</a></h4>
+				</section>
+
+				<section>
+					<img src="images/margincollapse.jpg" alt="">
+
+					<aside class="notes">
+						Learn more:
+						http://www.w3.org/TR/CSS21/box.html#collapsing-margins
+						http://stackoverflow.com/questions/3069921/what-is-the-point-of-css-collapsing-margins
+						http://reference.sitepoint.com/css/collapsingmargins
+					</aside>
+				</section>
+
+				<section>
+					<h2>&amp; Box Sizing</h2>
+					<p>"When you set the width of an element, the element can actually appear bigger than what you set: the element's border and padding will stretch out the element beyond the specified width. Look at the following example, where two elements with the same width value end up different sizes in the result."
+					</p>
+					<p>
+						--<a href="http://learnlayout.com/box-model.html">learnlayout.com Box Model</a>
+					</p>
+				</section>
+		
+				<section>
+					<img src="images/boxsizing.jpg" alt="">					
+				</section>
+
+				<section>
+					<h2>Box Sizing Math:</h2>
+
+					<div><code>margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</code><br><br></div>
+					<img src="http://learn.shayhowe.com/assets/courses/html-css-guide/box-model/box-model.png"><br><br>
+					<div><code></code>20 + 6 + 20 + 400 + 20 + 6 + 20 = 492px<code></code></div>
+				</section>
+
+				<section data-state="sect-boxmath">&nbsp;</section>
+
+				<section>
+					<p>"Over the generations, people realized that math is not fun, so a new CSS property called box-sizing was created. When you set <code>box-sizing: border-box;</code> on an element,... the padding and border of that element no longer increase its width."
+					</p>
+					<p>
+						--<a href="http://learnlayout.com/box-sizing.html">learnlayout.com Box Sizing</a>
+					</p>
+				</section>
+
+				<section>
+					<p>In plain English, this just means the padding is subtracted from the total width, rather than adding to it.</p>
+					<p>You can add it globally using the CSS <code>*</code> selector, so all your math becomes easier:</p>
+
+				<pre>
+              <code contenteditable class="css">
+  * {	
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+              </code>
+            </pre>
+
+					<aside class="notes">http://paulirish.com/2012/box-sizing-border-box-ftw/</aside>
+				</section>
+
+				<section>
+					<h2>DIY</h2>
+					<pre class="codepen" data-height="300" data-type="result" data-href="gxzBo" data-user="elyseholladay" data-safe="true"><code></code><a href="http://codepen.io/elyseholladay/pen/gxzBo">Check out this Pen!</a></pre>
+<script async src="http://codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section data-state="group sect-naming">
+					<h1>
+						Name All The Things!
+					</h1>
+					<h3>Basic Naming, DRY, Page Structure Markup</h3>
+					<aside class="notes">Let's go back to our mockup and do the box drawing exercise around all the rest—the paragraphs, titles, etc. Then let's add HTML with classes, and the content (provided in a text file).</p>
+				</section>
+
+
+				<section>
+					<h2>Basic Naming</h2>
+					<p>Now we have four stacked divs—great. We've written their purposes inside each one, but our code doesn't know the difference; they're all just <code>&lt;div&gt;</code>s.</p>
+					<p>We can reference our <code>&lt;span&gt;</code> separately, because it's the only <code>&lt;span&gt;</code> on the page, right? But how do we reference our <code>&lt;div&gt;</code>s individually?</p>
+				</section>
+
+				<section>
+					<h2>Classes</h2>
+
+					<p>Classes (and IDs) are just names we can apply to any HTML element. They don't have any styling information to them all by themselves. They provide us a way to reference an element by a name.</p>
+
+					<aside class="notes">We'll talk about this more tomorrow, on class/id and semantics and naming theory, but for now, we're just going to give all our divs and stuff names!</aside>
+				</section>
+
+				<section>
+					<h2>Name All The Things!</h2>
+
+		<pre class="fragment">
+          <code contenteditable class="html">
+  &lt;div class=&quot;header&quot;&gt;
+    header
+    &lt;div class=&quot;logo&quot;&gt;logo&lt;/div&gt;
+    &lt;div class=&quot;nav&quot;&gt;nav&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;banner&quot;&gt;banner&lt;/div&gt;
+  &lt;div class=&quot;about&quot;&gt;about&lt;/div&gt;
+  &lt;div class=&quot;hoursdirections&quot;&gt;hours and directions&lt;/div&gt;
+  &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
+          </code>
+        </pre>
+
+			        <aside class="notes">
+			        	Since we already know what our divs are, I bet you can guess what we are going to name them, right? Note I converted that span to a div, since it's a more common thing to use, it doesn't need to be a span.
+					</aside>
+				</section>
+
+				<section>
+					<p>
+						If you refresh you'll notice there's no difference in the styles--our <code>&lt;div&gt;</code> CSS still applies. But now we can do this:
+					</p>
+
+					<pre class="codepen" data-height="300" data-type="result" data-href="eJDGk" data-user="elyseholladay" data-safe="true"><code></code><a href="http://codepen.io/elyseholladay/pen/eJDGk">Check out this Pen!</a></pre>
+					<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+					<aside class="notes">Now we can have generic code that applies to all divs, or specific code that only applies to one.</aside>
+				</section>
+
+				<section>
+					<h2>3 Words About DRY:<br>Don't Repeat Yourself</h2>
+
+		<pre>
+        <code contenteditable class="css">
+  div { margin: 20px; padding: 20px;}
+          </code>
+        </pre>
+
+					<p>This code applies to all the <code>&lt;div&gt;</code>s on the page, so we can just write it here, instead of doing this:</p>
+
+		<pre>
+        <code contenteditable class="css">
+  .header {border: 1px solid red; margin: 20px; padding: 20px;}
+  .banner {border: 1px solid black; margin: 20px; padding: 20px;}
+  .about {border: 1px solid purple; margin: 20px; padding: 20px;}
+  .hoursdirections {border: 1px solid green; margin: 20px; padding: 20px;}
+  .footer {border: 1px solid orange; margin: 20px; padding: 20px;}
+          </code>
+        </pre>
+
+
+
+					<aside class="notes">
+						Did you notice how we divided up our CSS just now? Much shorter and easier to read.
+					<p>D.R.Y means "Don't Repeat Yourself". So where possible, if you can condense your styles, you should!</p>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Adding Content</h2>
+					<p>Obviously there's a lot more in our mockup than a word or two. Let's go back to our mockup and do the box drawing exercise around all the rest—the paragraphs, titles, etc.</p>
+					<aside class="notes">
+						Write HTML w/ classes for each section and put the content from content.md in it. Then we'll go thru each section and look at some more detailed HTML for it.
+					</aside>
+				</section>
+
+				<section>
+					<h2>The Header</h2>
+					<p>Our <code>div.logo</code> will have an image in it, but for now let's just write the name of our coffeeshop, Vintage Heart Coffee.</p>
+					<p>The navigation will be in the new HTML5 attribute <code>&lt;nav&gt;</code> and contain a set of links.</p>
+					<p>You're probably used to seeing navigations in a <code>&lt;ul&gt;</code> unordered list, but for accessibility, we're learning <a href="http://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/">this might not be the best</a>.</p>
+					<aside class="notes">The <code>role="navigation"</code> is an ARIA accessibility thing to tell screen readers what type of section this is. You can apply it to a <code>div.navigation</code> as well if your site can't use HTML5.</aside>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;Vintage Heart Coffee&lt;/div&gt;
+    &lt;nav role=&quot;navigation&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<h2>The Banner</h2>
+					<p>The banner here is a big image, but we're not ready to add images. Instead let's just add our content as text.</p>
+					<p>We have a tagline, and an address.</p>
+
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;banner&quot;&gt;
+    &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
+    &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+
+				<section>
+					<h2>About</h2>
+					<!-- <p>There's a lot more content here, so let's copy it from our <code>content.md</code> file.</p> -->
+					<p>We'll put each header in an &lt;h4&gt; tag, which tells us it's a header, but not as important as an h1, and then each paragraph into a &lt;p&gt; paragraph element.</p>
+					<aside class="notes">Add .introtext in day two, so we can use that as a layout problem.</aside>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;about&quot;&gt;
+
+      &lt;h4&gt;Slow Down.&lt;/h4&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+      &lt;h4&gt;Third Space&lt;/h4&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+
+      &lt;h4&gt;Local Coffee &amp;amp; Pastries&lt;/h4&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+
+				<section>
+					<h2>Hours &amp; Directions</h2>
+					<p>Here we have a map, which will be an image. To the left we have an address and the hours.</p>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;hoursdirections&quot;&gt;
+    &lt;div class=&quot;map&quot;&gt;
+      [map goes here]
+    &lt;/div&gt;
+    &lt;div class=&quot;address&quot;&gt;
+      1405 E. 7th. Austin, TX 78702
+    &lt;/div&gt;
+    &lt;div class=&quot;hours&quot;&gt;
+      Open every day from 7am til 10 pm.
+    &lt;/div&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<h2>Footer</h2>
+					<p>Lastly, we have the footer, which is basically a duplication of the header, but without the logo.</p>
+					<p>Note the <code>#</code>s in the link hrefs? Because those pages don't exist yet, we're just adding placeholder URLs. Like the images, we'll come back and fill these in later.</p>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;footer&quot;&gt;
+    &lt;nav role=&quot;navigation&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+        <aside class="notes">At this point we should have barebones.html</aside>
+				</section>
+				<section data-state="sect-basicpage"></section>
+
+				<section data-state="group sect-makeup">
+					<h1>Making it Pretty!</h1>
+					<h3>Background, Margin, Colors, Fonts</h3>
+					<aside class="notes">Typically here we'd go straight into layout and floating, but considering our 4 hr/2 day schedule I wanted to end on something more fun so we will get to the weird complicated floating stuff tomorrow!</aside>
+				</section>
+
+				<section>
+					<h2>Backgrounds</h2>
+					<p>Let's add some background colors to each section instead of borders, so they're more visible and less ugly!</p>
+
+					<pre class="fragment">
+        <code contenteditable class="css">
+  body {
+    background: #F7F5F2;
+  }
+
+  .header {
+    background: #F7F5F2;
+  }
+
+  .banner {
+    background: #4D717A;
+  }
+
+  .about { /* no background */ }
+
+  .hoursdirections {
+    background: #ffffff;
+  }
+
+  .footer {
+    background: #222222;
+  }
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<h2>Margins</h2>
+					<p>If we remove the <code>margin</code> from the <code>&lt;div&gt;</code> element in our CSS we'll see that things stack closer together, which is what we want. But they don't touch the edge. Why?</p>
+					<p class="fragment">The browser automatically applies a margin (of <code>8px</code>) to the <code>body</code>. Most of the time you'll apply <code>margin: 0;</code> to the <code>body</code> to override it and get full-width backgrounds.</p>
+										<pre class="fragment">
+        <code contenteditable class="css">
+  body {
+    margin: 0;
+  }
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<h2>Font Colors</h2>
+					<pre>
+			        <code contenteditable class="css">
+  body {
+    color: #222;
+  }
+
+  .logo {
+    color: #555;
+  }
+
+  .banner {
+    color: #fff;
+  }
+
+  .about h4 {
+    color: #a18c9c;
+  }
+
+  .hoursdirections {
+    color: #694160;
+  }
+</code></pre>
+
+					<aside class="notes">The '.about h4' thing we will discuss tomorrow in more detail, but has anyone here seen that before? Do you know what it does? It says "only h4's within the .about div".</aside>
+				</section>  
+
+				<section>
+					<h2>Link Colors</h2>
+					<pre>
+					<code contenteditable class="css">
+  a, a:active, a:visited {
+    color: #4d717a;
+    text-decoration: none;
+  }
+
+  a:hover, a:focus {
+    color: #9cb89a;
+    text-decoration: none;
+  }
+
+					</code>
+					</pre>
+
+				</section>
+
+
+
+				<section>
+					<h2>Fonts</h2>
+					<p>Let's add some fonts—we'll use a Google Web Font and a regular websafe font fallback.</p>
+					<p class="fragment">First we'll add the Google Web Font link into the head of our HTML page.</p>
+					<pre class="fragment">
+        <code>
+  &lt;link href='http://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif:400,700' rel='stylesheet' type='text/css'&gt;
+          </code>
+        </pre>
+        		</section>
+
+        		<section>
+        			<p>Then we'll add the <code>font-family</code> declaration in our CSS, along with some other font styles.</p>
+					<pre class="fragment">
+        <code contenteditable class="css">
+  body {
+    font-size: 100%;
+    line-height: 1.5em;
+    font-family: "Noto Serif", Georgia, serif;
+  }
+
+
+  h1, h2, h2, h4, h5, nav {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+  }
+          </code>
+        </pre>
+					<aside class="notes">Discuss Typekit (show on my site?) and @font-face if there is time. Maybe include in SASS version?</aside>
+				</section>
+
+
+				<section data-state="group sect-dayoneend">
+					<h1>We're Getting There!</h1>
+					<aside class="notes">Tomorrow we'll go over layout, floats, CSS commenting and organization, and polishing up our coffeeshop page!</aside>
+				</section>
+
+
+				<section data-state="group sect-float">
+					<h1>float: left;</h1>
+					<h3>Layout Time!</h3>
+				</section>
+
+				<section>
+					<h2>What is a Float?</h2>
+					<p>Floating was originally intended to "float" images around text<sup><a href="http://learnlayout.com/float.html">1</a></sup>.</p>
+					
+					<p class="fragment">“The practice of flowing text around an image goes back a long, long time. That’s why the ability was added to the Web starting with Netscape 1.1, and why CSS makes it possible using the property float."</p>
+
+					<p class="fragment">
+						"The purpose of the CSS float property is to push a block-level element to the left or right, ...allow[ing] naturally-flowing content to wrap around the floated element. This concept is similar to what you see every day in print literature."<br/><br/>
+
+						— <a href="http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">Smashing Magazine Float Theory</a></p>
+
+				</section>
+
+				<section>
+						<p style="text-align: center;" ><img src="images/floatspec.jpg"></br>
+						<a href="http://www.w3.org/TR/REC-CSS1-961217#floating-elements">The CSS1 spec from December 17, 1996.</a>	</p>
+						<aside class="notes">Check out that rad background!1</aside>
+
+				</section>
+
+				<section>
+					<h2>Eric Meyer, July 17, 2004</h2>
+					<p>"Floats have been bent to the purpose of large-scale layout for exactly one reason: clear. Because you can clear a footer below two floated columns, float layout came into being.  If there had ever been a way to “clear” elements below positioned elements, we’d never have bothered to use floats for layout.  We’d have used floats in layouts, but that’s not the same thing."</p>
+					<p>— <a href="http://meyerweb.com/eric/thoughts/2004/07/17/floats-dont-suck-if-you-use-them-right/">Floats Suck if you Don't Use Them Right</a></p>
+				</section>
+
+
+				<section>
+					<h2>We Abuse Floats for Layout</h2>
+					<p>"Take the common page layout with a section and an aside. The section and aside, as block level elements, will be stacked on top of one another by default. However, we want them to sit side by side."</p>
+					<p>— <a href="http://learn.shayhowe.com/html-css/box-model">Shay Howe</a></p>
+
+					<p style="text-align: center;"><img src="http://learn.shayhowe.com/assets/courses/html-css-guide/box-model/floats.png" alt=""></p>
+				</section>
+
+				<section data-state="sect-tryit">
+					<h1>Try it Yourself!</h1>
+				</section>
+
+				<section>
+					<h2>OK, so, float: left;?</h2>
+					
+					<pre class="codepen" data-height="300" data-type="result" data-href="kClGd" data-user="elyseholladay" data-safe="true"><code></code><a href="http://codepen.io/elyseholladay/pen/kClGd">Check out this Pen!</a></pre>
+					<script async src="http://codepen.io/assets/embed/ei.js"></script>
+
+					<aside class="notes">
+					OK.. well, that isn't exactly what we wanted. 
+					Why?
+					</aside>
+				</section>
+
+				<section data-state="sect-float1">&nbsp;</section>
+
+				<section>
+					<h2>"Important Things to Note"</h2>
+					<p>"...when floating an element it is going to float all the way to the edge of its parent container. If there isn’t a parent element it will float all the way to the edge of the page."</p>
+
+					<p class="fragment">Secondly, because floated elements "are taken out of the flow", the other block elements around them act as if they aren't there.</p>
+
+					<p class="fragment">Elements after it ignore the floated elements and appear where they normally would if the float element wasn't there.</p>
+
+				</section>
+
+				<section>
+					<h2>Block Elements = Full Width</h2>
+					<p>Third, if you'll remember back to our display slides, a block element takes up all it's available width. A floated element that does not have a pre-defined width will take up only as much horizontal space as its content.</p>
+
+					<p class="fragment">This is why we are seeing the behavior we just saw: our <code>.sidebar</code> is now all the way to the left of the page, the <code>.main</code> element is acting like the <code>.sidebar</code> isn't there, and the <code>.sidebar</code> is only as wide as its content (the word "sidebar").</p>
+
+					<aside class="notes">Note that the _word_ sidebar is wrapping around the div, but the actual div.main is all the way to the left of the page. if you imagine .sidebar as an image, this is what you'd expect from a print-style floated layout.</aside>
+
+				</section>
+
+
+				<section>
+					<h2>Floats with Widths</h2>
+					<p>So we just add a width to <code>.sidebar</code>, right?</p>
+
+					<aside class="notes">
+						OK, not quite. Why?
+
+
+					</aside>
+
+				</section>
+
+				<section data-state="sect-float2">&nbsp;</section>
+
+				<section>
+					<h2>Moar Widths</h2>
+					<p>Because <code>.main</code> is still a block element, it will still take up 100% of the width of the page. So even though we set a  width on <code>.sidebar</code>, <code>.main</code> isn't next to it because it's 100% wide.</p>
+
+					<aside class="notes">Suggestions on what to do next? [answers: a) give <code>.main</code> a width or b) float <code>.main</code>. correct fix is both.]</aside>
+				</section>
+
+
+				<section>
+					<h2>Give <code>.main</code> a width</h2>
+				
+					<p class="fragment">This makes <code>.main</code> small enough to be next to <code>.sidebar</code>, but block elements start at the beginning of a new line, and ignore floated elements, so <code>.main</code> is still starting at the edge of the page instead of beside <code>.sidebar</code>.</p>
+				</section>
+
+
+				<section>
+					<h2>float <code>.main</code></h2>
+
+					<p class="fragment">If we float <code>.main</code> without giving it a width, it does exactly what <code>.sidebar</code> did: take up only the width of its content, the word "main".</p>
+					<p class="fragment">Now <code>.main</code> floating correctly beside <code>.sidebar</code>, but it's skinny, and now the <code>.footer</code> is all up in our business.</p>
+
+				</section>
+
+				<section>
+					<h2>float <code>.main</code> AND give it width</h2>
+					<p class="fragment">OK.. better! But why is <code>.footer</code> still all up in my business?</p>
+				</section>
+
+				<section data-state="sect-float3">&nbsp;</section>
+
+				<section>
+					<h2>Floats are Weird: Clearing</h2>
+					<p>Because floated elements are "taken out of the flow", the other block elements around them act as if they aren't there. Elements after it ignore the floated elements and appear where they normally would if the float element wasn't there.</p>
+
+					<p class="fragment">So <code>.footer</code> is appearing where it should, right after our last non-floated element (<code>.header</code>), and ignoring the two floated elements in between it.</p>
+				</section>
+
+				<section data-state="sect-float4">&nbsp;</section>
+
+				<section>
+					<h2>clear: both/left/right/none;</h2>
+					<p>What we want <code>.footer</code> to do is respect that there's two elements above it, even though they are floated.</p>
+
+					<p>The <code>clear</code> property will force a <code>&lt;div&gt;</code> to fall below the two floated elements.</p>
+
+					<p class="fragment">Clear has four values: <code>both/left/right/none</code>.</p>
+
+					<p class="fragment"><code>clear: left</code> will only clear left-floated elements.</br><code>clear: right</code> will only clear right-floated elements, and <code>clear: both</code> will clear anything.</p>
+				</section>
+
+				<section>
+					<h2>Clear the <code>.footer</code></h2>
+
+					<p>Add <code>clear: both;</code>, since we want to clear both <code>.main</code> and <code>.sidebar</code></p>
+
+					<aside class="notes">Ah, that's what we wanted, isn't it! Starting to look like a webpage!</aside>
+				</section>
+
+				<section data-state="sect-float5">&nbsp;</section>
+
+				<section>
+					<h2>Clearing Part 2: The Clearfix</h2>
+
+					<p>Let's float <code>.tagline</code> to the right, so we can have the logo and tagline appearing side by side.</p>
+
+					<p class="fragment">Why is <code>.tagline</code> now appearing half in and half out of <code>.header</code>? and why is it pushing <code>.main</code> down?</p>
+
+
+					<aside class="notes">There's a second use for clears, and to explain it we'll need to learn a little more about floats and the flow.</aside>
+				</section>
+
+				<section>
+					<h2>Floats Aren't Content</h2>
+					<p class="fragment">Floated elements don't count as content of their parent <code>&lt;div&gt;</code>, so they don't count as height.</p>
+
+					<p class="fragment">The parent element (<code>.header</code>) will be the height of whatever content is inside it, so <code>.tagline</code> doesn't count for the height of <code>.header</code>.</p>
+
+					<p class="fragment">So what we need to do to fix both of these problems is make <code>.header</code> recognize <code>.tagline</code> as being inside it, and make <code>.sidebar</code> and <code>.main</code> start on the same line.</p>
+
+				</section>
+
+
+				<section>
+					<h2>Any Ideas?</h2>
+
+					<p class="fragment">Let's see what putting a clear on <code>.sidebar</code> gets us.</p>
+
+					<p class="fragment">This makes <code>.sidebar</code> and <code>.main</code> start on the same line, because we are making <code>.sidebar</code> clear any floats that are above it. But it didn't fix our containment problem.</p>
+
+				</section>
+
+				<section>
+					<h2>float the parent</h2>
+
+					<p>A floated element will expand to contain any floated elements that descend from it.</p>
+
+					<p class="fragment">If we float <code>.header</code> left, it suddenly will include <code>.tagline</code> in its content. However, it is now only as wide as its content, which is the word "header" + the <code>.tagline</code> box.</p>
+
+					<p class="fragment">Additionally, if we remove the <code>clear: both;</code> on <code>.sidebar</code>, <code>.sidebar</code> will now float up next to <code>.header</code>. So this fix can work in some cases, but not in all.</p>
+
+				</section>
+
+				<section data-state="sect-float6">&nbsp;</section>
+
+				<section>
+					<h2>The Clearfix</h2>
+
+					<p>What we REALLY want is to clear after the <code>.tagline</code> but before the close of <code>.header</code>.</p>
+
+					<p>If we clear <code>.sidebar</code>, we are clearing after <code>.header</code>. But there's no <code>&lt;div&gt;</code> after <code>.tagline</code> to put <code>clear: both;</code> on.</p>
+
+					<p class="fragment">So we're going to rely on some CSS magic:</p>
+					
+					<pre class="fragment">
+					    <code contenteditable class="css">
+  .header:after { 
+    content: ""; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+  }  
+
+					  </code>
+					</pre>
+
+				</section>
+
+				<section>
+					<h2>:after</h2>
+					<p><code>:after</code> is a CSS pseudo-selector that means "after the element".</p>
+
+					<p>Since <code>:after</code> isn't really a DOM element, we have to put some content in it, so we define <code>content: "";</code>, which makes the browser believe there's some content in this fake <code>:after</code> thing.</p>
+
+					<p>Then we make it a block level element, but hide it with <code>visibility: hidden;</code> and set it to <code>height: 0;</code> so that it never actually appears, and then we apply <code>clear: both;</code> to it.</p> 
+
+				</section>
+
+				<section data-state="sect-float7">&nbsp;</section>
+
+
+
+				<section data-state="group sect-layout">
+					<h1>Laying Out</h1>
+					<h3>Floats for layout, columns</h3>
+					<aside class="notes">go through each section like we did on day one and do the layout part</aside>
+				</section>
+
+
+				<section>
+					<h2>The Header</h2>
+					<p>Here we want our logo floated to the left, and our navigation to the right and for the header to appropriately contain both floated elements.</p>
+					<p>Our nav text items are already styled. We want header to have a bottom border, and a background color.</p>
+					<p>Later we'll add the image logo.</p>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;header&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;Vintage Heart Coffee&lt;/div&gt;
+    &lt;nav role=&quot;navigation&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<pre>
+    <code contenteditable class="css"  >
+  .header {
+    padding: .75em 0 .5em;
+    background: #F7F5F2;
+    border-bottom: 5px solid #a8988b;
+  }
+
+    .header:after {
+      content: "";
+      height: 0;
+      display: block;
+      visibility: hidden;
+      clear: both;
+    }
+
+    .logo {
+      color: #555;
+      float: left;
+    }
+
+    nav {
+      float: right;
+      border: 1px solid red;
+    }
+  </code>
+</pre>
+				</section>
+
+
+
+				<section>
+					<h2>The Banner</h2>
+					<p>We'll get to images at the end, so for now let's just add plenty of padding to make this as big as we want it and give it a bottom border.</p>
+					<p>Give your tagline and address their font sizes.</p>
+
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;banner&quot;&gt;
+    &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
+    &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<PRE>
+    <code contenteditable class="css">
+  .banner {
+    background: #4d717a;
+    color: #fff;
+    border-bottom: 1px solid #a8988b;
+    padding: 120px 50px;
+  }
+
+    .tagline {  
+      font-size: 100px;
+    }
+
+    .address {  
+      font-size: 30px;
+    }
+  </code>
+</pre>
+
+				</section>
+
+					<!-- About section columns -->
+
+				<section>
+					<h2>About</h2>
+					<p>Our about section is actually two columns, so knowing what we know about floats, we could just give each <code>h4</code> and <code>p</code> a width and they'd get all columned up, right?</p>
+					<p class="fragment">New CSS like flexbox may allow for that, but for now let's just use some good old-fashioned divs, one for each column.</p>
+				</section>
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;about&quot;&gt;
+
+    &lt;div class=&quot;introtext&quot;&gt;
+      &lt;h4&gt;Slow Down.&lt;/h4&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+      &lt;h4&gt;Third Space&lt;/h4&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;introtext&quot;&gt;
+      &lt;h4&gt;Local Coffee &amp;amp; Pastries&lt;/h4&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+      &lt;p&gt;[text goes here]&lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+					<h2>About</h2>
+					
+					<p>Note that you shouldn't name your <code>&lt;div&gt;</code>s <code>.leftcolumn</code> and <code>.rightcolumn</code>--what if you switched them?</p>
+					<p class="fragment">I picked <code>.introtext</code>, which says something about the content it contains. Semantic names can be a little difficult to choose, but try to explain what's it is or does, not what it looks like.</p>
+					<p class="fragment">Now let's give each of those <code>.introtext</code>s a width and a float. And since we're floating them, be sure to give <code>.about</code> a clearfix, too!</p>
+
+				</section>
+
+<section>
+<pre>
+    <code contenteditable class="css">
+  .about {
+    background: #ffffff;
+  }
+
+    .about:after {
+      content: "";
+      height: 0;
+      display: block;
+      visibility: hidden;
+      clear: both;
+    }  
+
+    .about h4 {
+      color: #a18c9c;
+    }  
+
+    .introtext {
+      float: left;
+      width: 50%;
+    }  
+
+    .about p {
+      color: #222f42;
+    }
+      </code>
+</pre>	
+</section>
+
+				<section>
+					<h2>Why didn't our <code>.introtext</code>s float?</h2>
+				</section>
+
+				<section data-state="sect-cssomg">&nbsp;</section>
+
+				<section>
+					<h2>Debugging</h2>
+					<p>But seriously: the best tool to debug CSS is the Dev Inspector and a trusty <code>border: 1px solid red;</code>. Try it out.</p>
+					<p class="fragment">Anyone remember the <code>box-sizing</code> from earlier? Because all of our <code>&lt;div&gt;</code>s have <code>padding</code> on them, <code>50%</code> (of the page) + <code>20px</code> of padding actually equals MORE than <code>50%</code> of the page.</p>
+					<p class="fragment">Let's remove that <code>padding: 20px;</code>, since we may not want EVERY <code>&lt;div&gt;</code> to have it, and let's add that <code>box-sizing</code> property back in.</p>
+				</section>
+
+				<section>
+<pre>
+    <code contenteditable class="css">
+  * { 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  /*div {
+    padding: 20px;
+  }*/
+  </code>
+</pre>	
+</section>
+
+
+
+				<section>
+					<h2>Hours &amp; Directions</h2>
+					<p>Let's make sure the address and hours float correctly to the left.</p>
+					<p>The map we can give an approximate size in the CSS and float it right. Since it's first, we can just float the others left without having to clear anything.</p>
+					<aside class="notes">Talk about height trick/non-clearing background when you add the image.</aside>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;hoursdirections&quot;&gt;
+    &lt;div class=&quot;map&quot;&gt;
+      map goes here
+    &lt;/div&gt;
+    &lt;div class=&quot;address&quot;&gt;
+      1405 E. 7th. Austin, TX 78702
+    &lt;/div&gt;
+    &lt;div class=&quot;hours&quot;&gt;
+      Open every day from 7am til 10 pm.
+    &lt;/div&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+<pre>
+    <code contenteditable class="css">
+  .hoursdirections {
+    background: #ffffff;
+    color: #694160;
+  }  
+
+    .hoursdirections:after {
+      content: "";
+      height: 0;
+      display: block;
+      visibility: hidden;
+      clear: both;
+    }
+
+    .hoursdirections .address {
+      color: #694160;
+      text-transform: uppercase;
+      font-size: 2em;
+      margin: 3em 0 .5em;
+      float: left;
+      width: 45%;
+    }
+
+    .hoursdirections .hours {
+      float: left;
+      clear: left;
+      width: 45%;
+      color: #798a77;
+      font-size: 1.25em;
+    }
+
+    .hoursdirections .map {
+      float: right;
+      background: black;
+      width: 45%;
+      height: 220px;
+    }
+  </code>
+</pre>	
+</section>
+
+
+				<section>
+					<h2>Footer</h2>
+					<p>Not much to do here—the background color is already added. Let's give it some more padding (spacing) so it's more readable.</p>
+					<p>We don't want our nav to float to the right, so let's override the <code>float: right;</code> just for the <code>.footer</code>.</p>
+					<p>Nav links will be different than the header, but we'll get to that after our CSS section.</p>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;footer&quot;&gt;
+    &lt;nav role=&quot;navigation&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+				</section>
+
+				<section>
+<pre>
+    <code contenteditable class="css">
+  .footer {
+    background: #222;
+    padding: 60px;
+  }
+
+    .footer nav {  
+      float: none;
+    }
+  </code>
+</pre>	
+</section>
+
+
+
+				<section data-state="group sect-css">
+					<h1>CSS In Use</h1>
+					<h3>Classes &amp; IDs, Specificity, Organization, &amp; Tools</h3>
+
+				</section>
+
+
+				<section>
+					<h2>Classes &amp; IDs</h2>
+					<p>Adding a class name or ID to an element does nothing to that element by default. Remember, it's just a name.</p>
+
+					<h4 class="fragment">IDs are unique.</h4>
+					<p class="fragment">Each element can have only one ID, and each page can have only one element with that ID.</p>
+
+					<h4 class="fragment">Classes are reusable.</h4>
+					<p class="fragment">You can use the same class on multiple elements, and you can use multiple classes on the same element.</p>
+				</section>
+
+
+				<section>
+					<p>Any styling information that needs to be applied to multiple objects on a page should be done with a class.</p>
+					<pre>
+              <code contenteditable class="html">
+  &lt;div class="widget"&gt;&lt;/div&gt;
+  &lt;div class="widget"&gt;&lt;/div&gt;
+  &lt;div class="widget"&gt;&lt;/div&gt;
+              </code>
+            </pre>
+					<p>You can now use the class name <code>.widget</code> as your hook to apply the same set of styling to all of these.</p>
+
+				</section>
+
+				<section>
+					<h2>Combinations</h2>
+
+					<p>There is nothing stopping you from having both an ID and a class on a single element.</p>
+
+<pre class="fragment">
+    <code contenteditable class="html">
+  &lt;div id="widget-12345" class="widget"&gt;[widget text]&lt;div&gt;
+  </code>
+</pre>
+					<p class="fragment"><code>.widget</code> is a class for styling all widgets, and <code>#widget-12345</code> is a unique ID that we can use to reference that particular widget in JavaScript, or to link directly to it as a unique URL.</p>
+
+				</section>
+
+				<section>
+					<h2>Multiples</h2>
+					<p>What if you need one <code>.widget</code> to be bigger than the rest, but still share all the other attributes?</p>
+					<pre>
+              <code contenteditable class="html">
+  &lt;div class="widget"&gt;&lt;/div&gt;
+  &lt;div class="widget big"&gt;&lt;/div&gt;
+  &lt;div class="widget"&gt;&lt;/div&gt;
+              </code>
+            </pre>
+<pre>
+    <code contenteditable class="css">
+  .widget {
+    background: blue;
+    padding: 20px;
+    color: white;
+  }
+
+  .big {
+    background: red;
+  }
+  </code>
+</pre>	
+				</section>
+
+				<section>
+					<h2>Chaining</h2>
+					<p>What is the difference between these two selectors?</p>
+
+<pre>
+    <code contenteditable class="css">
+  .widget.big { }
+  </code>
+</pre>
+
+<pre>
+    <code contenteditable class="css">
+  .widget .big { }
+  </code>
+</pre>
+</section>
+
+				<section>
+					<h2>A Single Space</h2>
+					<p class="fragment">They look nearly identical, but the top one has no space between <code>.widget</code> and <code>.big</code> while the bottom one does. This small difference makes a huge difference in what it does. To some of you, that top selector may seem like a mistake, but it's actually a quite useful selector.</p>
+
+					<p class="fragment"><a href="http://css-tricks.com/multiple-class-id-selectors/">Example from css-tricks.com</a></p>
+				</section>
+
+				<section>
+					<h2>In English...</h2>
+<pre>
+    <code contenteditable class="css">
+  .widget.big { }
+  </code>
+</pre>
+					<p>Select the element which has a class name of <code>.widget</code> and ALSO a class name of <code>.big</code>.</p>
+
+<pre>
+    <code contenteditable class="css">
+  .widget .big { }
+  </code>
+</pre>
+					<p>Select all elements with the class name <code>.big</code> that are descendents of the element <code>.widget</code>.</p>
+
+					<aside class="notes">
+						http://css-tricks.com/multiple-class-id-selectors/
+					</aside>
+				</section>
+
+
+
+				<section>
+					<h2>Don't Be Redundant</h2>
+
+<pre>
+    <code contenteditable class="html">
+  &lt;a href="http://css-tricks.com" class="link"&gt;CSS-Tricks.com&lt;/a&gt;
+  </code>
+</pre>
+
+					<p>We already know this element is a link—it's built-in to the element.</p>
+
+					<p>If you want to style it like a link, you can use the element <code>&lt;a&gt;</code>. If you are making a more complex site and need to distinguish between types of links, choose a better classname. For example: <code>.search_link</code> and <code>.profile_link</code>.</p>
+				</section>
+
+
+				<section>
+					<h2>Be Semantic</h2>
+					<p>"When choosing a class or ID it is important to choose something that has value to the actual context of that element."</p>
+
+					<p>"For example, if you have a div with an orange background that contains social media links your first inclination might be to give the div a class of <code>.orange</code>. What happens if that orange background is later changed to blue? Having a class of <code>.orange</code>. no longer makes sense. A better, more semantic, choice for a class would be <code>.social</code>. as it pertains to the contents of the div, not the style."</p>
+
+					<p>— <a href="http://learn.shayhowe.com/html-css/elements-semantics">Shay Howe</a></p>
+				</section>
+
+				<section>
+					<p>"Class names should never map directly to a CSS property, or a given visual effect you want to achieve (such as floating, or a border effect, or a background colour, etc.). It’s shockingly bad as an ideology because it encourages a direct mapping between class name and display action. A class name, like an ID, should be descriptive in a semantic sense. ie., it should describe something about the content of the tag to which it applies. “float” is not describing content. It is describing an action you want to perform."</p>
+
+					<p>— <a href="http://2002-2012.mattwilcox.net/archive/entry/id/1058/">Matt Wilcox, Naming and using id's and classes properly</a></p>
+
+				</section>
+
+				<section>
+					<h2>Why Not to Use IDs</h2>
+					<p>There can only be one element with an ID per page, so that element is not re-usable on that page.</p>
+					
+					<p class="fragment">There are also very few cases where ID-based styles will never be reused. Let's say you have a <code>#search</code> box in your header. Then later you decide to add it to the footer, too.</p>
+
+					<p class="fragment">What is confusing is that your CSS will still apply. However, if you're using JavaScript on that <code>#search</code>, it will now break, because the JavaScript doesn't know which one.</p>
+
+					<p class="fragment">It's almost always better to use "several reusable snippets of CSS" with classes instead of IDs to prevent this potential issue. A good rule of thumb for me is that unless it's truly unique, like our <code>.widget-12345</code> example, use a class.</p>
+
+					<aside class="notes">
+						http://oli.jp/2011/ids/
+					</aside>
+
+				</section>
+
+				<section data-state="sect-specificity">
+					<h1>Specificity</h1>
+				</section>
+
+				<section>
+					<h2>What is Specificity?</h2>
+
+					<p>The "C" in CSS stands for "cascading." We typically take that to mean a style rule later in the stylesheet will override a previous one.</p>
+
+					<p>CSS is more complicated, though. It assigns each selector a "weight" based on how specific it is. The more specific your selector, the more precedence it will have.</p>
+
+				</section>
+
+				<section>
+					<h2>Browsers Read Backwards</h2>
+
+					<p>Browsers read right to left. The right-most selector is the "key selector".</p>
+
+					<pre>
+    <code contenteditable class="html">
+  #home a { }
+  </code>
+</pre>
+
+					<p class="fragment">"We’d generally read this selector as "find the element with <code>#home</code>", then apply these styles to every <code>a</code> it contains". This should be super-fast, right? After all there should only be one <code>#home</code> on the page. However, browsers read this differently: "find every a element, then check if its parent element is <code>#home</code>, and if not keep checking parent elements until you find it or reach <code>&lt;html&gt;</code>". That’s a lot less performant than our mental model."
+
+					<br/>— <a href="http://oli.jp/2011/ids/">oli.jp on IDs</a></p>
+				</section>
+
+				<section>
+					<h2>Weight</h2>
+					<ul>
+						<li>Give each HTML element selector 1 point. Example: p</li>
+						<li>Give each class selector 10 points. Example: .column</li>
+						<li>Give each id selector 100 point. Example: #wrap</li>
+						<li>Add up the points for each piece of the selector to get the full value of the selector.</li>
+					</ul>
+
+					<pre class="codepen" data-height="300" data-type="result" data-href="LpgHc" data-user="elyseholladay" data-safe="true"><code></code><a href="http://codepen.io/elyseholladay/pen/LpgHc">Check out this Pen!</a></pre>
+					<script async src="http://codepen.io/assets/embed/ei.js"></script>
+				</section>
+
+				<section>
+					<h2>The Reference Docs</h2>
+					<h4><a href="http://css-tricks.com/specifics-on-css-specificity/">CSS-Tricks: The Specifics on CSS Specificity</a></h4>
+					<h4><a href="http://coding.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/">Smashing Magazine: CSS Specificity &amp; Inheritance</a></h4>
+					<h4><a href="http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">Smashing Magazine: CSS Specificity Things you Should Know</a></h4>
+				</section>
+
+				<section>
+					
+					<p>"Using an ID over a class also ratchets up the specificity all the way to Darth Sidious in <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">Andy Clarke’s Star Wars-themed guide to CSS specificity</a>. While you might not think this is a big deal, it quickly leads to a full-on selector battle. This problem becomes worse as the CSS gets larger, and more people get involved, leading to crazy-specific selectors like <code>.entry #content_main div.post a {…}</code>. This rule could probably be rewritten at least as <code>.entry .post a {…}</code>, or maybe <code>.post a {…}</code>, but changing it to <code>.post-link {…}</code> would be even better. My rule of thumb is three CSS selectors max — any more than this and it’s generally a sign of (specificity) problems."</p>
+
+					<p>— <a href="http://oli.jp/2011/ids/">oli.jp on IDs</a></p></p>
+
+
+				</section>
+
+				<section>
+					<h1>Organizing &amp; Commenting</h1>
+				</section>
+
+				<section>
+					<h2>Commenting Rules of Thumb</h2>
+
+					<p><ol>
+						<li>Comment every big section of CSS/HTML</li>
+						<li>Comment any individual items that may need clarification</li>
+						<li>Be consistent</li>
+					</ol></p>
+
+					<p>There are loads of CSS style guides and organizational references. Here's a few I like: <a href="http://warpspire.com/posts/kss/">KSS (GitHub)</a>, <a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a>, <a href="http://csswizardry.com/2012/04/my-html-css-coding-style/">CSSWizardry</a>, and <a href="http://css-tricks.com/css-style-guides/">more</a>.</p>
+
+				</section>
+
+				<section>
+					<h2>SMACSS</h2>
+					<img src="http://smacss.com/img/book-covers.png" alt="">
+					<p class="fragment">SMACSS stands for <a href="http://smacss.com">Scalable Modular Architecture for CSS</a>, a book written by <a href="http://snook.ca">Jonathan Snook</a>.</p>
+				</section>
+
+				<section>
+					<h2>Categorize your CSS Rules</h2>
+					<p>"At the very core of SMACSS is categorization. By categorizing CSS rules, we begin to see patterns and can define better practices around each of these patterns."</p>
+					<ul class="fragment">
+						<li>Base — These are your defaults (html, body, h1, ul, etc)</li>
+						<li>Layout — These divide the page into major sections</li>
+						<li>Module — These are the reusable modular components of a design</li>
+						<li>State — These describe how things look when in a particular state (hidden or expanded, active/inactive)</li>
+						<li>Theme — These define things like a color scheme or typographic treatment across a site</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>OOCSS</h2>
+					<p>OOCSS, or Object Oriented CSS, created by <a href="http://twitter.com/stubbornella">Nicole Sullivan</a>, breaks CSS out into reusable modules.</p>
+					<p>It has two main principles: separate structure from skin, and separate container from content.</p>
+
+					<p>— <a href="http://coding.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/">Smashing Magazine: An Introduction to OOCSS</a></p>
+
+					<aside class="notes">
+						"Like Object Oriented CSS, SMACSS is an approach to writing css and html with more emphasis placed on using classes. Unlike OOCSS, it doesn’t suggest using classes for everything. It’s fine with IDs and descendent selectors where appropriate."
+					</aside>
+				</section>
+
+				<section>
+					<h2>A Quick Example</h2>
+					<pre>
+    <code contenteditable class="css">
+  .button {
+    width: 200px;
+    height: 50px;
+  }
+
+ .widget {
+    width: 500px;
+    height: auto;
+    float: left;
+  }
+
+  .skin {
+    border: solid 1px #000;
+    background: #ccc;
+    color: #fff
+  }
+    </code>
+</pre>
+
+<pre>
+    <code contenteditable class="html">
+  &lt;div class=&quot;button skin&quot;&gt;[content of a button]&lt;div&gt;
+  &lt;div class=&quot;widget skin&quot;&gt;[content of a widget]&lt;div&gt;
+  </code>
+</pre>
+
+					<aside class="notes">Now all the elements are using classes, the common styles are combined into a reusable “skin” and nothing is unnecessarily repeated. We just need to apply the “skin” class to all the elements and the result will be the same as what the first example would produce, except with less code and a possiblity for further reuse.</aside>
+				</section>
+
+				<section>
+					<h2>DRY: Don't Repeat Yourself</h2>
+					<p>The main principles of DRY are: group reusable css properties together, and name these groups logically.</p>
+					<aside class="notes">I already touched on DRY earlier. The concept of DRY really started OOCSS/SMACSS type concepts. Never have more CSS than you need, combine it in smart ways, etc. But as sites got complex, you'd start to see styles grouped in classes that didn't make sense together. So now naming them logically is a key part.</aside>
+				</section>
+
+				<section>
+					<h2>File Organization</h2>
+					<p>
+						<ul>
+							<li>put CSS files in a <code>/css</code> or <code>/stylesheets</code> folder</li>
+							<li>amount of CSS is a good determining factor for breaking into files</li>
+							<li>divide your CSS into files based on type. (think SMACSS)</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>A Brief Note about SASS</h2>
+					<p style="text-align:center;"><img src="http://sass-lang.com/images/sass.gif" alt=""></p>
+					<p class="fragment">SASS is a tool that makes organizing your CSS (and files) much easier. You can create variables and mixins that "include" repeatable bits of code. These are easier to edit (in one place), maintain (all code cascades from them), and organize.</p>
+				</section>
+
+				<section>
+					<h2>Variables</h2>
+						<pre>
+    <code contenteditable class="sass">
+  $white: #ffffff
+  $grey: #cccccc
+  $lightpurple: #a18c9c
+  $darkpurple: #694160
+    </code>
+</pre>
+				<pre class="fragment">
+    <code contenteditable class="sass">
+  a, a:active, a:visited {
+    color: $lightpurple
+  }
+
+  a:hover, a:focus {
+    color: $darkpurple
+  }
+      </code>
+</pre>
+
+				</section>
+
+
+				<section>
+					<h2>Mixins</h2>
+
+						<pre>
+    <code contenteditable class="sass"  >
+  // rounded corners - all corners the same
+  @mixin border-radius-all($cornervalue)
+    border-radius: $cornervalue
+
+  // rounded corners - different corners
+  @mixin border-radius-mixed($topleft, $topright, $bottomright, $bottomleft)
+    border-radius: $topleft $topright $bottomright $bottomleft
+  
+    </code>
+</pre>
+				<pre class="fragment">
+    <code contenteditable class="css">
+  .box {
+    @include border-radius-mixed(0, 2px, 0, 2px)
+  }
+
+  .button {
+    @include border-radius-all(2px)
+  }
+      </code>
+</pre>
+				</section>
+
+				<section>
+					<h2>Importing</h2>
+					<p>"Stylesheets can get pretty big. CSS has an <code>@import</code> directive that allows you to break your styles up into multiple stylesheets, but each stylesheet takes a separate (slow) HTTP request. That’s why Sass’s <code>@import</code> directive pulls in the stylesheets directly. Not only that, but any variables or mixins defined in @imported files are available to the files that import them."</p>
+				</section>
+
+				<section>
+					<h2>Import Example</h2>
+									<pre>
+    <code contenteditable class="sass">
+  /* _rounded.sass */
+
+  @mixin rounded($vert, $horz, $radius: 10px) {
+    border-#{$vert}-#{$horz}-radius: $radius;
+    -moz-border-radius-#{$vert}#{$horz}: $radius;
+    -we  bkit-border-#{$vert}-#{$horz}-radius: $radius;
+  }
+      </code>
+</pre>
+									<pre class="fragment">
+    <code contenteditable class="sass">
+  /* style.sass */
+
+  @import "rounded";
+
+  #navbar li { @include rounded(top, left); }
+  #footer { @include rounded(top, left, 5px); }
+  #sidebar { @include rounded(top, left, 8px); }
+      </code>
+</pre>
+				</section>
+
+				<section>
+					<h2>Nesting</h2>
+					<p>My favorite SASS feature is nesting. This can get really hairy if you do it too much, but used sparingly it's very cool.</p>
+					<pre class="fragment">
+    <code contenteditable class="css">
+  .about {
+    margin: 4em 0;
+  }
+
+    .about .introtext {
+      float: left;
+      width: 50%;
+      padding: 0 4.5em 0 0;
+    }  
+</code>
+</pre>
+					<pre class="fragment">
+    <code contenteditable class="sass">
+  .about {
+    margin: 4em 0;
+
+    .introtext {
+      float: left;
+      width: 50%;
+      padding: 0 4.5em 0 0;
+    }
+  }
+</code>
+</pre>
+
+				</section>
+
+
+				<section data-state="sect-sass">&nbsp;
+				</section>
+
+				<section data-state="sect-pretty2">
+					<h1>Making it </br> Pretty </br>Part 2</h1>
+				</section>
+
+				<section>
+					<h2>Wrapping</h2>
+					<p>So the last layout work we have to do is the width. You can see in the mock that every section has a full background color, but the content isn't full. Now it's <em>possible</em> to do this with some really horrible CSS, like adding left and right padding to every single div...</p>
+					<p class="fragment">But obviously that is not a good idea. It's not maintainable, it's not precise, and it's definitely not reusable.</p>
+				</section>
+
+				</section>
+
+				<section>
+					<h2><code>div.wrapper</code></h2>
+					<p>Instead, let's create a <code>.wrapper</code> div that wraps the content inside each section. The section itself will be full width, but the wrapper inside it will constrain only the content. This ensures that each section will always be the same width, and that we'll never miss one.</p>
+				</section>
+
+				<section>
+		<pre>
+        <code contenteditable class="html">
+  &lt;div class=&quot;banner&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+      &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
+      &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+          </code>
+        </pre>
+					<pre class="fragment">
+    <code contenteditable class="css">
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+  }
+    </code>
+</pre>
+					<aside class="notes">You could add this 5 times, like .about .wrapper, .hoursdirections .wrapper, etc, but you don't have to—module!</aside>
+				</section>
+
+
+				<section>
+					<h2>Nav CSS</h2>
+					<p>In our page, our header and footer navs are the same, but the header one is floated left, and the bottom one is not (among other differences.)</p>
+					<p>The cleanest way to write this is to have a "module" for nav, and then overwrite what is necessary in each section.</p>
+				</section>
+
+				<section>
+					<pre>
+    <code contenteditable class="css">
+  nav {
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    /* inherit link color */
+  }
+
+    nav a {
+      padding-right: 1.5em;
+    }
+
+  /* style nav individually in modules */  
+</code>
+</pre>
+					<pre class="fragment">
+    <code contenteditable class="css">
+  .header nav {
+    float: right;
+    width: 75%;
+    margin-top: 1.8em;
+    text-align: right;
+  }
+
+</code>
+</pre>
+
+				</section>
+
+				<section>
+					
+					<pre>
+    <code contenteditable class="css">
+  .footer nav a,
+  .footer nav a:active,
+  .footer nav a:visited {
+    color: #9cb89a;
+  }
+
+
+  .footer nav a:hover,
+  .footer nav a:focus {
+    color: #F7F5F2;
+  }
+
+</code>
+</pre>
+				</section>
+
+				<section>
+					<h2>Fixed Header</h2>
+					<p>Our header in the final version is "fixed", so it doesn't scroll along with the rest of the page.</p>
+					<pre class="fragment">
+    <code contenteditable class="css">
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    padding: .75em 0 .5em;
+    background: #F7F5F2;
+    border-bottom: 5px solid #a8988b;
+  }
+
+  body {
+    margin: 100px 0 0 0;
+  }
+
+</code>
+</pre>
+				</section>
+
+				<section data-state="sect-pics">
+					<h1>Pictures</h1>
+				</section>
+
+				<section>
+					<h2>The Logo</h2>
+					<p>The logo uses ye olde "text-indent" trick. This is cool because it allows for the text to still be in the HTML, but not to display on screen.</p>
+
+				</section>
+
+				<section>
+					<h2>Banner Background</h2>
+					<p>The banner is a simple background image, but with one special trick:</p>
+					<p class="fragment"><code>background-size: cover;</code></p>
+					<p class="fragment">This means "cover the entire area".</p>
+					<p class="fragment">And as we saw with the logo, a background image requires a height. Here the <code>background-size</code> stands in for the width. I set a min-height here, rather than a fixed height, but either would work.</p>
+				</section>
+
+				<section>
+					<h2>Tagline</h2>
+					<p>Tagline uses the same text-indent trick as the logo, and again, has a height and a width.</p>
+				</section>
+
+				<section>
+					<h2>Address</h2>
+					<p>This isn't an image, but I did add some margin and padding to correctly align it where I wanted.</p>
+					<p class="fragment">The negative margin value will move an element UP. Use sparingly, as layouts with this can get tricky! Pro tip: use a border to see where these elements overlap!</p>
+				</section>
+
+				<section>
+					<h2>Footer Background</h2>
+					<p>A fun trick for visual effect is adding a texture background on top of a color. The texture image is transparent (and sometimes tileable), so it will be a much smaller file than one with the bg color and texture in it. This reduces your image payload to the server!</p>
+				</section>
+
+				<section>
+					<h2>Hours &amp; Directions Background</h2>
+					<p>Like the footer, we're using a background pattern here. Unlike the footer, this one is a repeatable image, so we don't set a location or "no-repeat".</p>
+					<p>I got this from my favorite tileable pattern library, <a href="subtlepatterns.com/">Subtle Patterns</a>.</p>
+				</section>
+
+				<section>
+					<h2>Map</h2>
+					<p>The map image is, unlike the others, an actual image in the HTML. It could easily be a background image, but I wanted it to overlap the footer, and a background won't do that. Can anyone guess why?</p>
+					<p class="fragment">Hint 1: Our map div is floated.</p>
+					<p class="fragment">Hint 2: A div with a background has to have a height and a width for the background image to fully appear.</p>
+					<p class="fragment">Hint 3: The content of a float doesn't count as height.</p>
+				</section>
+
+
+				<section>
+					<h2>Map</h2>
+					<p>Because the image is in the HTML, it will always display full size, unless we give it some CSS to change that, cut it off, etc. Since our div is floated, and the content (a full size image) doesn't count as height, if we set a smaller height to the div (<code>220px</code>), the footer will appear right after that... but the rest of the image will still show.</p>
+					<p>This wouldn't work if the map was a background image, because to get it to fully appear, we'd have to set the height to the full height of the map image.</p>
+					<aside class="notes">An alternate solution might be to give the footer a negative top margin, but that could get a little messy.</aside>
+				</section>
+
+				<section>
+					<h2>CSS3 and SASS</h2>
+				</section>
+
+				<section>
+					<h2>Header Box Shadow</h2>
+					<pre>
+    <code contenteditable class="css">
+  .header {
+    border-bottom: 5px solid #a8988b;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+</code>
+</pre>
+				</section>
+
+				<section>
+					<h2>Link Transitions</h2>
+
+			<pre>
+    <code contenteditable class="css">
+  a, a:active, a:visited {
+    color: #4d717a;
+    text-decoration: none;
+    transition: color 0.5s ease;
+    -webkit-transition: color 0.5s ease;
+  }
+
+</code>
+</pre>
+				</section>
+
+				<section>
+					<h2>RGB<span style="text-transform:lowercase;">a</span></h2>
+					<p>RGBa is a way to set colors (similar to a hex value) that allows for an alphatransparency value.</p>
+					<p class="fragment">Opacity <code>opacity: .5</code> sets everything in the entire div to be that transparency value, which we may not want. If we just want the background color to be transparent, but not the text, opacity won't work. Enter RGBa. </p>
+
+			<pre class="fragment">
+    <code contenteditable class="css">
+  .about h4 {
+    border-bottom: 2px solid rgba(161, 140, 156, .25);
+  }
+
+</code>
+</pre>
+				</section>
+
+				<section>
+					<h2>SASS</h2>
+					<p>Your last downloaded zip contains two different versions, style.scss and style.sass. These are two syntax formats that SASS allows for.</p>
+					<p class="fragment">.scss looks like CSS, including punctuation, and accepts regular CSS.</p>
+					<p class="fragment">.sass has no punctuation, and nesting is dependent on indentation.</p>
+				</section>
+
+				<section data-state="sect-end">
+					<h1>The End!</h1>
+				</section>
+
+
+
+
+
+
+
+			<section></section>
+				
+
+			</div>
+  		<footer>
+        <div class="copyright">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+        </div>
+      </footer>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				center: true,
+				mouseWheel: false,
+				progress: true,
+				history: true,
+				rollingLinks: false,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
+
