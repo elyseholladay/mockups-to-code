@@ -182,129 +182,129 @@
 }
 
 .sect-html {
-  background: url('/images/gifs/derpypug.gif') no-repeat left bottom;
+  background: url('../../images/gifs/derpypug.gif') no-repeat left bottom;
   background-size: 105%;  
 }
 
 .sect-boxes {
-  background: url('/images/gifs/pizza.gif') no-repeat 0 0;
+  background: url('../../images/gifs/pizza.gif') no-repeat 0 0;
   background-size: 105%;
 }
 
 .sect-boxmath {
-  background: url('/images/gifs/JGnope.gif') no-repeat -8em 0;
+  background: url('../../images/gifs/JGnope.gif') no-repeat -8em 0;
   background-size: 140%;
 }
 
 .sect-naming {
-  background: url('/images/gifs/jlawyeah.gif') no-repeat -8em 0;
+  background: url('../../images/gifs/jlawyeah.gif') no-repeat -8em 0;
   background-size: 140%;
 }
 
 .sect-basicpage {
-  background: url('/images/gifs/whoselinedance.gif') no-repeat 0 0;
+  background: url('../../images/gifs/whoselinedance.gif') no-repeat 0 0;
   background-size: 100%;
 }
 
 .sect-makeup {
-  background: url('/images/gifs/makeup.gif') no-repeat 0 -6em;
+  background: url('../../images/gifs/makeup.gif') no-repeat 0 -6em;
   background-size: 100%;
 }
 
 .sect-dayoneend {
-  background: url('/images/gifs/indyswitch.gif') no-repeat 0 0;
+  background: url('../../images/gifs/indyswitch.gif') no-repeat 0 0;
   background-size: 108%;
 }
 
 .sect-float {
-  background: url('/images/gifs/hovercat.gif') no-repeat 0 0;
+  background: url('../../images/gifs/hovercat.gif') no-repeat 0 0;
   background-size: 100%;
 }
 
 .sect-tryit {
-  background: url('/images/gifs/drwhoblegh.gif') no-repeat 0 0;
+  background: url('../../images/gifs/drwhoblegh.gif') no-repeat 0 0;
   background-size: 102%;
 }
 
 .sect-float1 {
-  background: url('/images/gifs/elifail.gif') no-repeat 0 0;
+  background: url('../../images/gifs/elifail.gif') no-repeat 0 0;
   background-size: 102%;
 }
 
 .sect-float2 {
-  background: url('/images/gifs/simbanala.gif') no-repeat 0 0;
+  background: url('../../images/gifs/simbanala.gif') no-repeat 0 0;
   background-size: 102%;
 }
 
 .sect-float3 {
-  background: url('/images/gifs/whaaa_pigtailgirl.gif') no-repeat -4em 0;
+  background: url('../../images/gifs/whaaa_pigtailgirl.gif') no-repeat -4em 0;
   background-size: 123%;
 }
 
 .sect-float4 {
-  background: url('/images/gifs/NFwut.gif') no-repeat left top;
+  background: url('../../images/gifs/NFwut.gif') no-repeat left top;
   background-size: 100%;
 }
 
 .sect-float5 {
-  background: url('/images/gifs/parkingswag.gif') no-repeat left bottom;
+  background: url('../../images/gifs/parkingswag.gif') no-repeat left bottom;
   background-size: 100%;
 }
 
 .sect-float6 {
-  background: url('/images/gifs/roncomputer.gif') no-repeat left top;
+  background: url('../../images/gifs/roncomputer.gif') no-repeat left top;
   background-size: 100%;
 }
 
 .sect-float7 {
-  background: url('/images/gifs/gollumconfused.gif') no-repeat center center;
+  background: url('../../images/gifs/gollumconfused.gif') no-repeat center center;
   background-size: 100%;
 }
 
 .sect-layout {
-  background: url('/images/gifs/buzzeyes.gif') no-repeat left top;
+  background: url('../../images/gifs/buzzeyes.gif') no-repeat left top;
   background-size: 100%;
   padding-top: 26em;
 }
 
 .sect-cssomg {
-  background: url('/images/gifs/css.gif') no-repeat center center;
+  background: url('../../images/gifs/css.gif') no-repeat center center;
   background-size: 60%;
 }
 
 .sect-css {
-  background: url('/images/gifs/excitedcarbaby.gif') no-repeat 0 0;
+  background: url('../../images/gifs/excitedcarbaby.gif') no-repeat 0 0;
   background-size: 110%;
   padding-top: 26em
 }
 
 .sect-specificity {
-  background: url('/images/gifs/squirrel.gif') no-repeat 0 -6em;
+  background: url('../../images/gifs/squirrel.gif') no-repeat 0 -6em;
   background-size: 100%;
 }
 
 .sect-css2 {
-  background: url('/images/gifs/css.gif') no-repeat 0 -6em;
+  background: url('../../images/gifs/css.gif') no-repeat 0 -6em;
   background-size: 100%;
 }
 
 .sect-pretty2 {
-  background: url('/images/gifs/davatronhimself.gif') no-repeat 0 -6em;
+  background: url('../../images/gifs/davatronhimself.gif') no-repeat 0 -6em;
   background-size: 100%;
 }
 
 .sect-pics {
-  background: url('/images/gifs/googlyeyes.gif') no-repeat 0 0;
+  background: url('../../images/gifs/googlyeyes.gif') no-repeat 0 0;
   background-size: 120%;
   padding-top: 26em
 }
 
 .sect-sass {
-  background: url('/images/gifs/sciencedino.gif') no-repeat center center;
+  background: url('../../images/gifs/sciencedino.gif') no-repeat center center;
   background-size: 120%;
 }
 
 .sect-end {
-  background: url('/images/gifs/sadbaby.gif') no-repeat 0 -6em;
+  background: url('../../images/gifs/sadbaby.gif') no-repeat 0 -6em;
   background-size: 100%;
 }
