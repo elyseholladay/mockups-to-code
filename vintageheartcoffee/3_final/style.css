@@ -1,0 +1,233 @@
+/* ----------------------------------------------------- */
+/* GLOBAL  --------------------------------------------- */
+/* ----------------------------------------------------- */
+
+body {
+    margin: 100px 0 0 0;
+    padding: 0;
+    background: #F7F5F2;
+    color: #222;
+    font-family: "Noto Serif", Georgia, serif;
+    font-size: 100%;
+    line-height: 1.5em;
+}
+
+* { 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+/* ----------------------------------------------------- */
+/* TYPOGRAPHY  ----------------------------------------- */
+/* ----------------------------------------------------- */
+
+  h1, h2, h3, h4, h5 {
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
+
+
+
+/* ----------------------------------------------------- */
+/* LINKS  ---------------------------------------------- */
+/* ----------------------------------------------------- */
+
+a, a:active, a:visited {
+	color: #4d717a;
+	text-decoration: none;
+    -webkit-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+a:hover, a:focus {
+	color: #9cb89a;
+	text-decoration: none;
+}
+
+
+/* ----------------------------------------------------- */
+/* GLOBAL  --------------------------------------------- */
+/* ----------------------------------------------------- */
+
+/* nav */
+nav {
+    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    /* inherit link color */
+}
+
+    nav a {
+        padding-right: 1.5em;
+    }
+
+    /* style nav individually in modules */
+
+/* wrapper */
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+    .wrapper:after {
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+
+
+/* ----------------------------------------------------- */
+/* MODULES  -------------------------------------------- */
+/* ----------------------------------------------------- */
+
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    padding: .75em 0 .5em;
+    background: #F7F5F2;
+    border-bottom: 5px solid #a8988b;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+    .logo {
+        float: left;
+        height: 105px;
+        width: 165px;
+        background: url('images/logo.png') 0 0 no-repeat;
+        background-size: 160px;
+        text-indent: -9999em;
+    }
+    
+    .header nav {
+        float: right;
+        width: 75%;
+        margin-top: 1.8em;
+        text-align: right;
+    }
+
+
+
+/* BANNER */
+
+.banner {
+    min-height: 540px;
+    background: url('images/banner_counter.png') 0 -220px no-repeat;
+    /*background: url('images/banner_frames.jpg') 0 -290px no-repeat;*/
+    background-size: cover;
+    border-bottom: 1px solid #a8988b;
+    color: #fff;
+}
+
+    .banner .wrapper {
+        padding: 8em 0;
+    }
+
+    .banner .tagline {
+        height: 123px;
+        width: 740px;
+        background: url('images/tagline.png') 0 0 no-repeat;
+        text-indent: -9999em;
+    }
+
+    .banner .address {
+        margin-top: -.5em;
+        padding-left: .5em;
+        color: #fff;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+
+/* ABOUT */
+
+.about {
+    margin: 4em 0;
+}
+
+    .about .introtext {
+        float: left;
+        width: 50%;
+        padding: 0 4.5em 0 0;
+    }
+
+    .about p {
+        color: #222f42;
+    }
+
+    .about h4 {
+        margin-bottom: .75em;
+        padding-bottom: 2px;
+        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid rgba(161, 140, 156, .25);
+        color: #a18c9c;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 1px #FFF;
+    }
+
+/* HOURS AND DIRECTIONS */
+
+.hoursdirections {
+    clear: both;
+    padding: 1em 0 4em;
+    background: #fff url('images/pattern.png');
+}
+
+
+    .hoursdirections .address {
+        float: left;
+        width: 45%;
+        margin: 3em 0 .5em;
+        font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #694160;
+    }
+
+    .hoursdirections .hours {
+        float: left;
+        clear: left;
+        width: 45%;
+        color: #798a77;
+        font-size: 1.25em;
+    }
+
+    .hoursdirections .map {
+        float: right;
+        width: 45%;
+        height: 220px;
+        /* height trick here since it's floating */
+    }
+
+/* FOOTER */
+
+.footer {
+    clear: both;
+    /*width: 100%;*/
+    /*margin: 0 auto;*/
+    padding: 4em 0;
+    background: #222;
+    background: rgb(46, 49, 51) url('images/subtletexture.png') 50% 50%;
+    color: #F7F5F2;
+}
+    
+    .footer nav a,
+    .footer nav a:active,
+    .footer nav a:visited {
+        color: #9cb89a;
+    }
+
+    .footer nav a:hover,
+    .footer nav a:focus {
+        color: #F7F5F2;
+    }

@@ -1,0 +1,134 @@
+/* ----------------------------------------------------- */
+/* GLOBAL  --------------------------------------------- */
+/* ----------------------------------------------------- */
+
+
+body {
+	background: #F7F5F2;
+	margin: 0;
+}
+
+* { 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+
+/* ----------------------------------------------------- */
+/* LAYOUT  --------------------------------------------- */
+/* ----------------------------------------------------- */
+
+
+/* HEADER */
+
+.header {
+    padding: .75em 0 .5em;
+    background: #F7F5F2;
+    border-bottom: 5px solid #a8988b;
+}
+
+    .header:after {
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+
+	.logo {
+        float: left;
+    }
+
+    nav {
+        float: right;
+    }
+
+
+
+/* BANNER */
+
+.banner {
+    background: #4d717a;
+    border-bottom: 1px solid #a8988b;
+    padding: 120px 50px;
+}
+
+    .tagline {
+        font-size: 100px;
+    }
+
+    .address {
+        font-size: 30px;
+    }
+
+
+/* ABOUT */
+
+.about {
+}
+
+    .about:after {
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+
+	.about h4 {
+    }
+
+    .introtext {
+        float: left;
+        width: 50%;
+    }
+
+    .about p {
+    }
+
+/* HOURS AND DIRECTIONS */
+
+.hoursdirections {
+    background: #ffffff;
+}
+
+    .hoursdirections:after {
+        content: "";
+        height: 0;
+        display: block;
+        visibility: hidden;
+        clear: both;
+    }
+
+    .hoursdirections .address {
+        font-size: 2em;
+        margin: 3em 0 .5em;
+        float: left;
+        width: 45%;
+    }
+
+    .hoursdirections .hours {
+        float: left;
+        clear: left;
+        width: 45%;
+        font-size: 1.25em;
+    }
+
+    .hoursdirections .map {
+        float: right;
+        background: black;
+        width: 45%;
+        height: 220px;
+    }
+
+/* FOOTER */
+
+.footer {
+    background: #222;
+    padding: 60px;
+}
+
+    .footer nav {
+        float: none;
+    }
