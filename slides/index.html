@@ -14,54 +14,42 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/gdi_elyse.css" id="theme">
+		<!-- <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print"> -->
 
-	    <!-- Typekit -->
-	    <!-- <script type="text/javascript" src="//use.typekit.net/iit5hog.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
 
 		<!-- For syntax highlighting -->
-		 <!-- light editor<link rel="stylesheet" href="lib/css/light.css"> -->
 		<!-- dark editor--><link rel="stylesheet" href="lib/css/dark.css">
 
-		<!-- If use the PDF print sheet so students can print slides-->
-		<!-- <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print"> -->
 		
-	    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 		
-		
-		<!-- My personal GA account -->
-	    <!-- Google Analytics -->
-	    <script type="text/javascript">
+		<!-- Google Analytics -->
+		<script type="text/javascript">
 
-	        var _gaq = _gaq || [];
-	        _gaq.push(['_setAccount', 'UA-33428524-1']);
-	        _gaq.push(['_trackPageview']);
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-33428524-1']);
+			_gaq.push(['_trackPageview']);
 
-	        (function() {
-	            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	        })();
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
 
-	    </script>
+		</script>
 	</head>
 
 	<body>
 
-		<!-- add ?transition=linear# to the URL -->
-
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-		        <!-- Opening -->
 
 				<section>
 					<h1>Mockups to Code</h1>
-
 				</section>
 
 				<!-- Outline -->
@@ -104,7 +92,7 @@
 								<li>Organizing &amp; Commenting</li>
 								<li>OOCSS, SMACSS, &amp; DRY</li>
 								<li>CSS File Organization</li>
-								<li>A Brief Note about SASS</li>
+								<li>A Brief Note about Sass</li>
 							</ul>
 						<li class="sectiontitle">Making it Pretty Part 2</li>
 							<ul>
@@ -127,7 +115,6 @@
 				<section>
 					<br/><br/><br/><br/><br/>
 					<h2>Web layouts are made of them.</h2>
-					<!-- press 's' to reveal notes -->
 					<aside class="notes">
 						Let's all look at our mockups and identify some basic parts of these layouts. Draw/outline those on your mockups!
 						header w/ logo and nav, banner, about, hours/directions, footer. these are the main sections.
@@ -160,26 +147,26 @@
 					<p>Let's take a look at some basic, vanilla <code>&lt;div&gt;</code>s.*</p>
 
 				<pre>
-              <code contenteditable class="html">
+			  <code contenteditable class="html">
   &lt;div&gt;
-    header
-    &lt;span&gt;logo&lt;/span&gt;
-    &lt;div&gt;nav&lt;/div&gt;
+	header
+	&lt;span&gt;logo&lt;/span&gt;
+	&lt;div&gt;nav&lt;/div&gt;
   &lt;/div&gt;
   &lt;div&gt;banner&lt;/div&gt;
   &lt;div&gt;about&lt;/div&gt;
   &lt;div&gt;hours and directions&lt;/div&gt;
   &lt;div&gt;footer&lt;/div&gt;
-              </code>
-            </pre>
+			  </code>
+			</pre>
 
 				<pre>
-              <code contenteditable class="css">
+			  <code contenteditable class="css">
  div {border: 1px solid blue;}
-              </code>
-            </pre>
+			  </code>
+			</pre>
 
-            <p>* and a sad, lonely span.</p>
+			<p>* and a sad, lonely span.</p>
 
 					<aside class="notes">
 						There's one for each section of our mockup that we drew on earlier. Load it up in your editor and your browser. In the browser we should see those four words, each on a new line, with a blue outline. If you pull up your style.css file you'll see div {border: 1px solid blue;} which is giving them the borders.
@@ -350,7 +337,7 @@
 				</section>
 		
 				<section>
-					<img src="images/boxsizing.jpg" alt="">					
+					<img src="images/boxsizing.jpg" alt="">
 				</section>
 
 				<section>
@@ -376,14 +363,14 @@
 					<p>You can add it globally using the CSS <code>*</code> selector, so all your math becomes easier:</p>
 
 				<pre>
-              <code contenteditable class="css">
+			  <code contenteditable class="css">
   * {	
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
   }
-              </code>
-            </pre>
+			  </code>
+			</pre>
 
 					<aside class="notes">http://paulirish.com/2012/box-sizing-border-box-ftw/</aside>
 				</section>
@@ -421,21 +408,21 @@
 					<h2>Name All The Things!</h2>
 
 		<pre class="fragment">
-          <code contenteditable class="html">
+		  <code contenteditable class="html">
   &lt;div class=&quot;header&quot;&gt;
-    header
-    &lt;div class=&quot;logo&quot;&gt;logo&lt;/div&gt;
-    &lt;div class=&quot;nav&quot;&gt;nav&lt;/div&gt;
+	header
+	&lt;div class=&quot;logo&quot;&gt;logo&lt;/div&gt;
+	&lt;div class=&quot;nav&quot;&gt;nav&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class=&quot;banner&quot;&gt;banner&lt;/div&gt;
   &lt;div class=&quot;about&quot;&gt;about&lt;/div&gt;
   &lt;div class=&quot;hoursdirections&quot;&gt;hours and directions&lt;/div&gt;
   &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 
-			        <aside class="notes">
-			        	Since we already know what our divs are, I bet you can guess what we are going to name them, right? Note I converted that span to a div, since it's a more common thing to use, it doesn't need to be a span.
+					<aside class="notes">
+						Since we already know what our divs are, I bet you can guess what we are going to name them, right? Note I converted that span to a div, since it's a more common thing to use, it doesn't need to be a span.
 					</aside>
 				</section>
 
@@ -454,22 +441,22 @@
 					<h2>3 Words About DRY:<br>Don't Repeat Yourself</h2>
 
 		<pre>
-        <code contenteditable class="css">
+		<code contenteditable class="css">
   div { margin: 20px; padding: 20px;}
-          </code>
-        </pre>
+		  </code>
+		</pre>
 
 					<p>This code applies to all the <code>&lt;div&gt;</code>s on the page, so we can just write it here, instead of doing this:</p>
 
 		<pre>
-        <code contenteditable class="css">
+		<code contenteditable class="css">
   .header {border: 1px solid red; margin: 20px; padding: 20px;}
   .banner {border: 1px solid black; margin: 20px; padding: 20px;}
   .about {border: 1px solid purple; margin: 20px; padding: 20px;}
   .hoursdirections {border: 1px solid green; margin: 20px; padding: 20px;}
   .footer {border: 1px solid orange; margin: 20px; padding: 20px;}
-          </code>
-        </pre>
+		  </code>
+		</pre>
 
 
 
@@ -498,18 +485,18 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;header&quot;&gt;
-    &lt;div class=&quot;logo&quot;&gt;Vintage Heart Coffee&lt;/div&gt;
-    &lt;nav role=&quot;navigation&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
-    &lt;/nav&gt;
+	&lt;div class=&quot;logo&quot;&gt;Vintage Heart Coffee&lt;/div&gt;
+	&lt;nav role=&quot;navigation&quot;&gt;
+	  &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+	&lt;/nav&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
@@ -521,13 +508,13 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;banner&quot;&gt;
-    &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
-    &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
+	&lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
+	&lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 
@@ -540,21 +527,21 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;about&quot;&gt;
 
-      &lt;h4&gt;Slow Down.&lt;/h4&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
-      &lt;h4&gt;Third Space&lt;/h4&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
+	  &lt;h4&gt;Slow Down.&lt;/h4&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
+	  &lt;h4&gt;Third Space&lt;/h4&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
 
-      &lt;h4&gt;Local Coffee &amp;amp; Pastries&lt;/h4&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
+	  &lt;h4&gt;Local Coffee &amp;amp; Pastries&lt;/h4&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
 
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 
@@ -565,20 +552,20 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;hoursdirections&quot;&gt;
-    &lt;div class=&quot;map&quot;&gt;
-      [map goes here]
-    &lt;/div&gt;
-    &lt;div class=&quot;address&quot;&gt;
-      1405 E. 7th. Austin, TX 78702
-    &lt;/div&gt;
-    &lt;div class=&quot;hours&quot;&gt;
-      Open every day from 7am til 10 pm.
-    &lt;/div&gt;
+	&lt;div class=&quot;map&quot;&gt;
+	  [map goes here]
+	&lt;/div&gt;
+	&lt;div class=&quot;address&quot;&gt;
+	  1405 E. 7th. Austin, TX 78702
+	&lt;/div&gt;
+	&lt;div class=&quot;hours&quot;&gt;
+	  Open every day from 7am til 10 pm.
+	&lt;/div&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
@@ -589,18 +576,18 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;footer&quot;&gt;
-    &lt;nav role=&quot;navigation&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
-    &lt;/nav&gt;
+	&lt;nav role=&quot;navigation&quot;&gt;
+	  &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+	&lt;/nav&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
-        <aside class="notes">At this point we should have barebones.html</aside>
+		  </code>
+		</pre>
+		<aside class="notes">At this point we should have barebones.html</aside>
 				</section>
 				<section data-state="sect-basicpage"></section>
 
@@ -615,30 +602,30 @@
 					<p>Let's add some background colors to each section instead of borders, so they're more visible and less ugly!</p>
 
 					<pre class="fragment">
-        <code contenteditable class="css">
+		<code contenteditable class="css">
   body {
-    background: #F7F5F2;
+	background: #F7F5F2;
   }
 
   .header {
-    background: #F7F5F2;
+	background: #F7F5F2;
   }
 
   .banner {
-    background: #4D717A;
+	background: #4D717A;
   }
 
   .about { /* no background */ }
 
   .hoursdirections {
-    background: #ffffff;
+	background: #ffffff;
   }
 
   .footer {
-    background: #222222;
+	background: #222222;
   }
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
@@ -646,36 +633,36 @@
 					<p>If we remove the <code>margin</code> from the <code>&lt;div&gt;</code> element in our CSS we'll see that things stack closer together, which is what we want. But they don't touch the edge. Why?</p>
 					<p class="fragment">The browser automatically applies a margin (of <code>8px</code>) to the <code>body</code>. Most of the time you'll apply <code>margin: 0;</code> to the <code>body</code> to override it and get full-width backgrounds.</p>
 										<pre class="fragment">
-        <code contenteditable class="css">
+		<code contenteditable class="css">
   body {
-    margin: 0;
+	margin: 0;
   }
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
 					<h2>Font Colors</h2>
 					<pre>
-			        <code contenteditable class="css">
+					<code contenteditable class="css">
   body {
-    color: #222;
+	color: #222;
   }
 
   .logo {
-    color: #555;
+	color: #555;
   }
 
   .banner {
-    color: #fff;
+	color: #fff;
   }
 
   .about h4 {
-    color: #a18c9c;
+	color: #a18c9c;
   }
 
   .hoursdirections {
-    color: #694160;
+	color: #694160;
   }
 </code></pre>
 
@@ -687,13 +674,13 @@
 					<pre>
 					<code contenteditable class="css">
   a, a:active, a:visited {
-    color: #4d717a;
-    text-decoration: none;
+	color: #4d717a;
+	text-decoration: none;
   }
 
   a:hover, a:focus {
-    color: #9cb89a;
-    text-decoration: none;
+	color: #9cb89a;
+	text-decoration: none;
   }
 
 					</code>
@@ -708,30 +695,29 @@
 					<p>Let's add some fonts—we'll use a Google Web Font and a regular websafe font fallback.</p>
 					<p class="fragment">First we'll add the Google Web Font link into the head of our HTML page.</p>
 					<pre class="fragment">
-        <code>
+		<code>
   &lt;link href='http://fonts.googleapis.com/css?family=Noto+Sans:700|Noto+Serif:400,700' rel='stylesheet' type='text/css'&gt;
-          </code>
-        </pre>
-        		</section>
+		  </code>
+		</pre>
+				</section>
 
-        		<section>
-        			<p>Then we'll add the <code>font-family</code> declaration in our CSS, along with some other font styles.</p>
+				<section>
+					<p>Then we'll add the <code>font-family</code> declaration in our CSS, along with some other font styles.</p>
 					<pre class="fragment">
-        <code contenteditable class="css">
+		<code contenteditable class="css">
   body {
-    font-size: 100%;
-    line-height: 1.5em;
-    font-family: "Noto Serif", Georgia, serif;
+	font-size: 100%;
+	line-height: 1.5em;
+	font-family: "Noto Serif", Georgia, serif;
   }
 
 
   h1, h2, h2, h4, h5, nav {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
+	font-family: "Noto Serif", Georgia, serif;
+	text-transform: uppercase;
   }
-          </code>
-        </pre>
-					<aside class="notes">Discuss Typekit (show on my site?) and @font-face if there is time. Maybe include in SASS version?</aside>
+		  </code>
+		</pre>
 				</section>
 
 
@@ -752,10 +738,8 @@
 					
 					<p class="fragment">“The practice of flowing text around an image goes back a long, long time. That’s why the ability was added to the Web starting with Netscape 1.1, and why CSS makes it possible using the property float."</p>
 
-					<p class="fragment">
-						"The purpose of the CSS float property is to push a block-level element to the left or right, ...allow[ing] naturally-flowing content to wrap around the floated element. This concept is similar to what you see every day in print literature."<br/><br/>
-
-						— <a href="http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">Smashing Magazine Float Theory</a></p>
+					<p class="fragment">"The purpose of the CSS float property is to push a block-level element to the left or right, ...allow[ing] naturally-flowing content to wrap around the floated element. This concept is similar to what you see every day in print literature."<br/><br/>
+					— <a href="http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/">Smashing Magazine Float Theory</a></p>
 
 				</section>
 
@@ -948,13 +932,13 @@
 					<p class="fragment">So we're going to rely on some CSS magic:</p>
 					
 					<pre class="fragment">
-					    <code contenteditable class="css">
+						<code contenteditable class="css">
   .header:after { 
-    content: ""; 
-    visibility: hidden; 
-    display: block; 
-    height: 0; 
-    clear: both;
+	content: ""; 
+	visibility: hidden; 
+	display: block; 
+	height: 0; 
+	clear: both;
   }  
 
 					  </code>
@@ -992,46 +976,45 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;header&quot;&gt;
-    &lt;div class=&quot;logo&quot;&gt;Vintage Heart Coffee&lt;/div&gt;
-    &lt;nav role=&quot;navigation&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
-    &lt;/nav&gt;
+	&lt;div class=&quot;logo&quot;&gt;Vintage Heart Coffee&lt;/div&gt;
+	&lt;nav role=&quot;navigation&quot;&gt;
+	  &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+	&lt;/nav&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
 					<pre>
-    <code contenteditable class="css"  >
+	<code contenteditable class="css"  >
   .header {
-    padding: .75em 0 .5em;
-    background: #F7F5F2;
-    border-bottom: 5px solid #a8988b;
+	padding: .75em 0 .5em;
+	background: #F7F5F2;
+	border-bottom: 5px solid #a8988b;
   }
 
-    .header:after {
-      content: "";
-      height: 0;
-      display: block;
-      visibility: hidden;
-      clear: both;
-    }
+	.header:after {
+	  content: "";
+	  height: 0;
+	  display: block;
+	  visibility: hidden;
+	  clear: both;
+	}
 
-    .logo {
-      color: #555;
-      float: left;
-    }
+	.logo {
+	  color: #555;
+	  float: left;
+	}
 
-    nav {
-      float: right;
-      border: 1px solid red;
-    }
+	nav {
+	  float: right;
+	}
   </code>
 </pre>
 				</section>
@@ -1047,32 +1030,32 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;banner&quot;&gt;
-    &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
-    &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
+	&lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
+	&lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
 					<PRE>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .banner {
-    background: #4d717a;
-    color: #fff;
-    border-bottom: 1px solid #a8988b;
-    padding: 120px 50px;
+	background: #4d717a;
+	color: #fff;
+	border-bottom: 1px solid #a8988b;
+	padding: 120px 50px;
   }
 
-    .tagline {  
-      font-size: 100px;
-    }
+	.tagline {  
+	  font-size: 100px;
+	}
 
-    .address {  
-      font-size: 30px;
-    }
+	.address {  
+	  font-size: 30px;
+	}
   </code>
 </pre>
 
@@ -1087,25 +1070,25 @@
 				</section>
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;about&quot;&gt;
 
-    &lt;div class=&quot;introtext&quot;&gt;
-      &lt;h4&gt;Slow Down.&lt;/h4&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
-      &lt;h4&gt;Third Space&lt;/h4&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
-    &lt;/div&gt;
+	&lt;div class=&quot;introtext&quot;&gt;
+	  &lt;h4&gt;Slow Down.&lt;/h4&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
+	  &lt;h4&gt;Third Space&lt;/h4&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
+	&lt;/div&gt;
 
-    &lt;div class=&quot;introtext&quot;&gt;
-      &lt;h4&gt;Local Coffee &amp;amp; Pastries&lt;/h4&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
-      &lt;p&gt;[text goes here]&lt;/p&gt;
-    &lt;/div&gt;
+	&lt;div class=&quot;introtext&quot;&gt;
+	  &lt;h4&gt;Local Coffee &amp;amp; Pastries&lt;/h4&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
+	  &lt;p&gt;[text goes here]&lt;/p&gt;
+	&lt;/div&gt;
 
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
@@ -1119,32 +1102,32 @@
 
 <section>
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .about {
-    background: #ffffff;
+	background: #ffffff;
   }
 
-    .about:after {
-      content: "";
-      height: 0;
-      display: block;
-      visibility: hidden;
-      clear: both;
-    }  
+	.about:after {
+	  content: "";
+	  height: 0;
+	  display: block;
+	  visibility: hidden;
+	  clear: both;
+	}  
 
-    .about h4 {
-      color: #a18c9c;
-    }  
+	.about h4 {
+	  color: #a18c9c;
+	}  
 
-    .introtext {
-      float: left;
-      width: 50%;
-    }  
+	.introtext {
+	  float: left;
+	  width: 50%;
+	}  
 
-    .about p {
-      color: #222f42;
-    }
-      </code>
+	.about p {
+	  color: #222f42;
+	}
+	  </code>
 </pre>	
 </section>
 
@@ -1163,15 +1146,15 @@
 
 				<section>
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   * { 
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
   }
   
   /*div {
-    padding: 20px;
+	padding: 20px;
   }*/
   </code>
 </pre>	
@@ -1188,61 +1171,61 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;hoursdirections&quot;&gt;
-    &lt;div class=&quot;map&quot;&gt;
-      map goes here
-    &lt;/div&gt;
-    &lt;div class=&quot;address&quot;&gt;
-      1405 E. 7th. Austin, TX 78702
-    &lt;/div&gt;
-    &lt;div class=&quot;hours&quot;&gt;
-      Open every day from 7am til 10 pm.
-    &lt;/div&gt;
+	&lt;div class=&quot;map&quot;&gt;
+	  map goes here
+	&lt;/div&gt;
+	&lt;div class=&quot;address&quot;&gt;
+	  1405 E. 7th. Austin, TX 78702
+	&lt;/div&gt;
+	&lt;div class=&quot;hours&quot;&gt;
+	  Open every day from 7am til 10 pm.
+	&lt;/div&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .hoursdirections {
-    background: #ffffff;
-    color: #694160;
+	background: #ffffff;
+	color: #694160;
   }  
 
-    .hoursdirections:after {
-      content: "";
-      height: 0;
-      display: block;
-      visibility: hidden;
-      clear: both;
-    }
+	.hoursdirections:after {
+	  content: "";
+	  height: 0;
+	  display: block;
+	  visibility: hidden;
+	  clear: both;
+	}
 
-    .hoursdirections .address {
-      color: #694160;
-      text-transform: uppercase;
-      font-size: 2em;
-      margin: 3em 0 .5em;
-      float: left;
-      width: 45%;
-    }
+	.hoursdirections .address {
+	  color: #694160;
+	  text-transform: uppercase;
+	  font-size: 2em;
+	  margin: 3em 0 .5em;
+	  float: left;
+	  width: 45%;
+	}
 
-    .hoursdirections .hours {
-      float: left;
-      clear: left;
-      width: 45%;
-      color: #798a77;
-      font-size: 1.25em;
-    }
+	.hoursdirections .hours {
+	  float: left;
+	  clear: left;
+	  width: 45%;
+	  color: #798a77;
+	  font-size: 1.25em;
+	}
 
-    .hoursdirections .map {
-      float: right;
-      background: black;
-      width: 45%;
-      height: 220px;
-    }
+	.hoursdirections .map {
+	  float: right;
+	  background: black;
+	  width: 45%;
+	  height: 220px;
+	}
   </code>
 </pre>	
 </section>
@@ -1257,30 +1240,30 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;footer&quot;&gt;
-    &lt;nav role=&quot;navigation&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
-    &lt;/nav&gt;
+	&lt;nav role=&quot;navigation&quot;&gt;
+	  &lt;a href=&quot;#&quot;&gt;hours &amp;amp; directions&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;baristas&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;press&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;blog&lt;/a&gt;
+	&lt;/nav&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 				</section>
 
 				<section>
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .footer {
-    background: #222;
-    padding: 60px;
+	background: #222;
+	padding: 60px;
   }
 
-    .footer nav {  
-      float: none;
-    }
+	.footer nav {  
+	  float: none;
+	}
   </code>
 </pre>	
 </section>
@@ -1309,12 +1292,12 @@
 				<section>
 					<p>Any styling information that needs to be applied to multiple objects on a page should be done with a class.</p>
 					<pre>
-              <code contenteditable class="html">
+			  <code contenteditable class="html">
   &lt;div class="widget"&gt;&lt;/div&gt;
   &lt;div class="widget"&gt;&lt;/div&gt;
   &lt;div class="widget"&gt;&lt;/div&gt;
-              </code>
-            </pre>
+			  </code>
+			</pre>
 					<p>You can now use the class name <code>.widget</code> as your hook to apply the same set of styling to all of these.</p>
 
 				</section>
@@ -1325,7 +1308,7 @@
 					<p>There is nothing stopping you from having both an ID and a class on a single element.</p>
 
 <pre class="fragment">
-    <code contenteditable class="html">
+	<code contenteditable class="html">
   &lt;div id="widget-12345" class="widget"&gt;[widget text]&lt;div&gt;
   </code>
 </pre>
@@ -1337,22 +1320,22 @@
 					<h2>Multiples</h2>
 					<p>What if you need one <code>.widget</code> to be bigger than the rest, but still share all the other attributes?</p>
 					<pre>
-              <code contenteditable class="html">
+			  <code contenteditable class="html">
   &lt;div class="widget"&gt;&lt;/div&gt;
   &lt;div class="widget big"&gt;&lt;/div&gt;
   &lt;div class="widget"&gt;&lt;/div&gt;
-              </code>
-            </pre>
+			  </code>
+			</pre>
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .widget {
-    background: blue;
-    padding: 20px;
-    color: white;
+	background: blue;
+	padding: 20px;
+	color: white;
   }
 
   .big {
-    background: red;
+	background: red;
   }
   </code>
 </pre>	
@@ -1363,13 +1346,13 @@
 					<p>What is the difference between these two selectors?</p>
 
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .widget.big { }
   </code>
 </pre>
 
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .widget .big { }
   </code>
 </pre>
@@ -1385,14 +1368,14 @@
 				<section>
 					<h2>In English...</h2>
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .widget.big { }
   </code>
 </pre>
 					<p>Select the element which has a class name of <code>.widget</code> and ALSO a class name of <code>.big</code>.</p>
 
 <pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .widget .big { }
   </code>
 </pre>
@@ -1409,7 +1392,7 @@
 					<h2>Don't Be Redundant</h2>
 
 <pre>
-    <code contenteditable class="html">
+	<code contenteditable class="html">
   &lt;a href="http://css-tricks.com" class="link"&gt;CSS-Tricks.com&lt;/a&gt;
   </code>
 </pre>
@@ -1471,7 +1454,7 @@
 					<p>Browsers read right to left. The right-most selector is the "key selector".</p>
 
 					<pre>
-    <code contenteditable class="html">
+	<code contenteditable class="html">
   #home a { }
   </code>
 </pre>
@@ -1560,28 +1543,28 @@
 				<section>
 					<h2>A Quick Example</h2>
 					<pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .button {
-    width: 200px;
-    height: 50px;
+	width: 200px;
+	height: 50px;
   }
 
  .widget {
-    width: 500px;
-    height: auto;
-    float: left;
+	width: 500px;
+	height: auto;
+	float: left;
   }
 
   .skin {
-    border: solid 1px #000;
-    background: #ccc;
-    color: #fff
+	border: solid 1px #000;
+	background: #ccc;
+	color: #fff
   }
-    </code>
+	</code>
 </pre>
 
 <pre>
-    <code contenteditable class="html">
+	<code contenteditable class="html">
   &lt;div class=&quot;button skin&quot;&gt;[content of a button]&lt;div&gt;
   &lt;div class=&quot;widget skin&quot;&gt;[content of a widget]&lt;div&gt;
   </code>
@@ -1607,131 +1590,6 @@
 					</p>
 				</section>
 
-				<section>
-					<h2>A Brief Note about SASS</h2>
-					<p style="text-align:center;"><img src="http://sass-lang.com/images/sass.gif" alt=""></p>
-					<p class="fragment">SASS is a tool that makes organizing your CSS (and files) much easier. You can create variables and mixins that "include" repeatable bits of code. These are easier to edit (in one place), maintain (all code cascades from them), and organize.</p>
-				</section>
-
-				<section>
-					<h2>Variables</h2>
-						<pre>
-    <code contenteditable class="sass">
-  $white: #ffffff
-  $grey: #cccccc
-  $lightpurple: #a18c9c
-  $darkpurple: #694160
-    </code>
-</pre>
-				<pre class="fragment">
-    <code contenteditable class="sass">
-  a, a:active, a:visited {
-    color: $lightpurple
-  }
-
-  a:hover, a:focus {
-    color: $darkpurple
-  }
-      </code>
-</pre>
-
-				</section>
-
-
-				<section>
-					<h2>Mixins</h2>
-
-						<pre>
-    <code contenteditable class="sass"  >
-  // rounded corners - all corners the same
-  @mixin border-radius-all($cornervalue)
-    border-radius: $cornervalue
-
-  // rounded corners - different corners
-  @mixin border-radius-mixed($topleft, $topright, $bottomright, $bottomleft)
-    border-radius: $topleft $topright $bottomright $bottomleft
-  
-    </code>
-</pre>
-				<pre class="fragment">
-    <code contenteditable class="css">
-  .box {
-    @include border-radius-mixed(0, 2px, 0, 2px)
-  }
-
-  .button {
-    @include border-radius-all(2px)
-  }
-      </code>
-</pre>
-				</section>
-
-				<section>
-					<h2>Importing</h2>
-					<p>"Stylesheets can get pretty big. CSS has an <code>@import</code> directive that allows you to break your styles up into multiple stylesheets, but each stylesheet takes a separate (slow) HTTP request. That’s why Sass’s <code>@import</code> directive pulls in the stylesheets directly. Not only that, but any variables or mixins defined in @imported files are available to the files that import them."</p>
-				</section>
-
-				<section>
-					<h2>Import Example</h2>
-									<pre>
-    <code contenteditable class="sass">
-  /* _rounded.sass */
-
-  @mixin rounded($vert, $horz, $radius: 10px) {
-    border-#{$vert}-#{$horz}-radius: $radius;
-    -moz-border-radius-#{$vert}#{$horz}: $radius;
-    -we  bkit-border-#{$vert}-#{$horz}-radius: $radius;
-  }
-      </code>
-</pre>
-									<pre class="fragment">
-    <code contenteditable class="sass">
-  /* style.sass */
-
-  @import "rounded";
-
-  #navbar li { @include rounded(top, left); }
-  #footer { @include rounded(top, left, 5px); }
-  #sidebar { @include rounded(top, left, 8px); }
-      </code>
-</pre>
-				</section>
-
-				<section>
-					<h2>Nesting</h2>
-					<p>My favorite SASS feature is nesting. This can get really hairy if you do it too much, but used sparingly it's very cool.</p>
-					<pre class="fragment">
-    <code contenteditable class="css">
-  .about {
-    margin: 4em 0;
-  }
-
-    .about .introtext {
-      float: left;
-      width: 50%;
-      padding: 0 4.5em 0 0;
-    }  
-</code>
-</pre>
-					<pre class="fragment">
-    <code contenteditable class="sass">
-  .about {
-    margin: 4em 0;
-
-    .introtext {
-      float: left;
-      width: 50%;
-      padding: 0 4.5em 0 0;
-    }
-  }
-</code>
-</pre>
-
-				</section>
-
-
-				<section data-state="sect-sass">&nbsp;
-				</section>
 
 				<section data-state="sect-pretty2">
 					<h1>Making it </br> Pretty </br>Part 2</h1>
@@ -1752,23 +1610,23 @@
 
 				<section>
 		<pre>
-        <code contenteditable class="html">
+		<code contenteditable class="html">
   &lt;div class=&quot;banner&quot;&gt;
-    &lt;div class=&quot;wrapper&quot;&gt;
-      &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
-      &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
-    &lt;/div&gt;
+	&lt;div class=&quot;wrapper&quot;&gt;
+	  &lt;div class=&quot;tagline&quot;&gt;Love your coffee&lt;/div&gt;
+	  &lt;div class=&quot;address&quot;&gt;1405 East 7th Street, Austin&lt;/div&gt;
+	&lt;/div&gt;
   &lt;/div&gt;
-          </code>
-        </pre>
+		  </code>
+		</pre>
 					<pre class="fragment">
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .wrapper {
-    width: 80%;
-    margin: 0 auto;
-    /*border: 1px solid red;*/
+	width: 80%;
+	margin: 0 auto;
+	/*border: 1px solid red;*/
   }
-    </code>
+	</code>
 </pre>
 					<aside class="notes">You could add this 5 times, like .about .wrapper, .hoursdirections .wrapper, etc, but you don't have to—module!</aside>
 				</section>
@@ -1782,27 +1640,27 @@
 
 				<section>
 					<pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   nav {
-    font-family: "Noto Sans", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    /* inherit link color */
+	font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	/* inherit link color */
   }
 
-    nav a {
-      padding-right: 1.5em;
-    }
+	nav a {
+	  padding-right: 1.5em;
+	}
 
   /* style nav individually in modules */  
 </code>
 </pre>
 					<pre class="fragment">
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .header nav {
-    float: right;
-    width: 75%;
-    margin-top: 1.8em;
-    text-align: right;
+	float: right;
+	width: 75%;
+	margin-top: 1.8em;
+	text-align: right;
   }
 
 </code>
@@ -1813,17 +1671,17 @@
 				<section>
 					
 					<pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .footer nav a,
   .footer nav a:active,
   .footer nav a:visited {
-    color: #9cb89a;
+	color: #9cb89a;
   }
 
 
   .footer nav a:hover,
   .footer nav a:focus {
-    color: #F7F5F2;
+	color: #F7F5F2;
   }
 
 </code>
@@ -1834,19 +1692,19 @@
 					<h2>Fixed Header</h2>
 					<p>Our header in the final version is "fixed", so it doesn't scroll along with the rest of the page.</p>
 					<pre class="fragment">
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 120px;
-    padding: .75em 0 .5em;
-    background: #F7F5F2;
-    border-bottom: 5px solid #a8988b;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 120px;
+	padding: .75em 0 .5em;
+	background: #F7F5F2;
+	border-bottom: 5px solid #a8988b;
   }
 
   body {
-    margin: 100px 0 0 0;
+	margin: 100px 0 0 0;
   }
 
 </code>
@@ -1897,8 +1755,7 @@
 					<h2>Map</h2>
 					<p>The map image is, unlike the others, an actual image in the HTML. It could easily be a background image, but I wanted it to overlap the footer, and a background won't do that. Can anyone guess why?</p>
 					<p class="fragment">Hint 1: Our map div is floated.</p>
-					<p class="fragment">Hint 2: A div with a background has to have a height and a width for the background image to fully appear.</p>
-					<p class="fragment">Hint 3: The content of a float doesn't count as height.</p>
+					<p class="fragment">Hint 2: The content of a float doesn't count as height.</p>
 				</section>
 
 
@@ -1910,18 +1767,14 @@
 				</section>
 
 				<section>
-					<h2>CSS3 and SASS</h2>
-				</section>
-
-				<section>
 					<h2>Header Box Shadow</h2>
 					<pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .header {
-    border-bottom: 5px solid #a8988b;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	border-bottom: 5px solid #a8988b;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
 </code>
@@ -1932,12 +1785,12 @@
 					<h2>Link Transitions</h2>
 
 			<pre>
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   a, a:active, a:visited {
-    color: #4d717a;
-    text-decoration: none;
-    transition: color 0.5s ease;
-    -webkit-transition: color 0.5s ease;
+	color: #4d717a;
+	text-decoration: none;
+	transition: color 0.5s ease;
+	-webkit-transition: color 0.5s ease;
   }
 
 </code>
@@ -1950,9 +1803,9 @@
 					<p class="fragment">Opacity <code>opacity: .5</code> sets everything in the entire div to be that transparency value, which we may not want. If we just want the background color to be transparent, but not the text, opacity won't work. Enter RGBa. </p>
 
 			<pre class="fragment">
-    <code contenteditable class="css">
+	<code contenteditable class="css">
   .about h4 {
-    border-bottom: 2px solid rgba(161, 140, 156, .25);
+	border-bottom: 2px solid rgba(161, 140, 156, .25);
   }
 
 </code>
@@ -1960,31 +1813,145 @@
 				</section>
 
 				<section>
-					<h2>SASS</h2>
-					<p>Your last downloaded zip contains two different versions, style.scss and style.sass. These are two syntax formats that SASS allows for.</p>
+					<h2>A Brief Note about Sass</h2>
+					<p>Your last downloaded zip contains two different versions, style.scss and style.sass. These are two syntax formats that Sass allows for.</p>
 					<p class="fragment">.scss looks like CSS, including punctuation, and accepts regular CSS.</p>
 					<p class="fragment">.sass has no punctuation, and nesting is dependent on indentation.</p>
 				</section>
 
-				<section data-state="sect-end">
-					<h1>The End!</h1>
+				<section>
+					<h2>What is Sass?</h2>
+					<p style="text-align:center;"><img src="images/sass-logo.png" alt=""></p>
+					<aside class="notes">Sass is a tool that makes organizing your CSS (and files) much easier. You can create variables and mixins that "include" repeatable bits of code. These are easier to edit (in one place), maintain (all code cascades from them), and organize.</aside>
+				</section>
+
+				<section>
+					<h2>Variables</h2>
+						<pre>
+	<code contenteditable class="sass">
+  $white: #ffffff
+  $grey: #cccccc
+  $lightpurple: #a18c9c
+  $darkpurple: #694160
+	</code>
+</pre>
+				<pre class="fragment">
+	<code contenteditable class="sass">
+  a, a:active, a:visited {
+	color: $lightpurple
+  }
+
+  a:hover, a:focus {
+	color: $darkpurple
+  }
+	  </code>
+</pre>
+
 				</section>
 
 
+				<section>
+					<h2>Mixins</h2>
+
+						<pre>
+	<code contenteditable class="sass">
+  // rounded corners - all corners the same
+  @mixin border-radius-all($cornervalue)
+	border-radius: $cornervalue
+
+  // rounded corners - different corners
+  @mixin border-radius-mixed($topleft, $topright, $bottomright, $bottomleft)
+	border-radius: $topleft $topright $bottomright $bottomleft
+  
+	</code>
+</pre>
+				<pre class="fragment">
+	<code contenteditable class="css">
+  .box {
+	@include border-radius-mixed(0, 2px, 0, 2px)
+  }
+
+  .button {
+	@include border-radius-all(2px)
+  }
+	  </code>
+</pre>
+				</section>
+
+				<section>
+					<h2>Importing</h2>
+					<p>"Stylesheets can get pretty big. CSS has an <code>@import</code> directive that allows you to break your styles up into multiple stylesheets, but each stylesheet takes a separate (slow) HTTP request. That’s why Sass’s <code>@import</code> directive pulls in the stylesheets directly. Not only that, but any variables or mixins defined in @imported files are available to the files that import them."</p>
+				</section>
+
+				<section>
+					<h2>Import Example</h2>
+									<pre>
+	<code contenteditable class="sass">
+  /* _rounded.sass */
+
+  @mixin rounded($vert, $horiz, $radius: 10px) {
+	border-#{$vert}-#{$horiz}-radius: $radius;
+	-moz-border-radius-#{$vert}#{$horiz}: $radius;
+	-we  bkit-border-#{$vert}-#{$horiz}-radius: $radius;
+  }
+	  </code>
+</pre>
+									<pre class="fragment">
+	<code contenteditable class="sass">
+  /* style.sass */
+
+  @import "rounded";
+
+  #navbar li { @include rounded(top, left); }
+  #footer { @include rounded(top, left, 5px); }
+  #sidebar { @include rounded(top, left, 8px); }
+	  </code>
+</pre>
+				</section>
+
+				<section>
+					<h2>Nesting</h2>
+					<p>My favorite Sass feature is nesting. This can get really hairy if you do it too much, but used sparingly it's very cool.</p>
+					<pre class="fragment">
+	<code contenteditable class="css">
+  .about {
+	margin: 4em 0;
+  }
+
+	.about .introtext {
+	  float: left;
+	  width: 50%;
+	  padding: 0 4.5em 0 0;
+	}  
+</code>
+</pre>
+					<pre class="fragment">
+	<code contenteditable class="sass">
+  .about {
+	margin: 4em 0;
+
+	.introtext {
+	  float: left;
+	  width: 50%;
+	  padding: 0 4.5em 0 0;
+	}
+  }
+</code>
+</pre>
+
+				</section>
 
 
+				<section data-state="sect-sass">&nbsp;</section>
 
-
-
-			<section></section>
+				<section data-state="sect-end">
+					<h1>The End!</h1>
+				</section>
 				
 
 			</div>
-  		<footer>
-        <div class="copyright">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
-        </div>
-      </footer>
+
+
 		</div>
 
 
@@ -2009,10 +1976,10 @@
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					// { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					// { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					// { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
