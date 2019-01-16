@@ -14,7 +14,6 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/gdi_elyse.css" id="theme">
-		<!-- <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print"> -->
 
 
 		<!-- For syntax highlighting -->
@@ -246,7 +245,7 @@
 					<p>The box model is the specification that defines how a box and its attributes relate to each other.</p>
 
 					<p class="fragment">It consists of four parts, in order: Margin, Border, Padding, Content.</p>
-					<img src="http://learn.shayhowe.com/assets/courses/html-css-guide/box-model/box-model.png" alt="" class="fragment">
+					<img src="images/box-model.png" alt="" class="fragment">
 				</section>
 
 				<section>
@@ -344,7 +343,7 @@
 					<h2>Box Sizing Math:</h2>
 
 					<div><code>margin-right + border-right + padding-right + width + padding-left + border-left + margin-left</code><br><br></div>
-					<img src="http://learn.shayhowe.com/assets/courses/html-css-guide/box-model/box-model.png"><br><br>
+					<img src="images/box-model.png"><br><br>
 					<div><code></code>20 + 6 + 20 + 400 + 20 + 6 + 20 = 492px<code></code></div>
 				</section>
 
@@ -761,8 +760,6 @@
 					<h2>We Abuse Floats for Layout</h2>
 					<p>"Take the common page layout with a section and an aside. The section and aside, as block level elements, will be stacked on top of one another by default. However, we want them to sit side by side."</p>
 					<p>— <a href="http://learn.shayhowe.com/html-css/box-model">Shay Howe</a></p>
-
-					<p style="text-align: center;"><img src="http://learn.shayhowe.com/assets/courses/html-css-guide/box-model/floats.png" alt=""></p>
 				</section>
 
 				<section data-state="sect-tryit">
@@ -1956,36 +1953,39 @@
 
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
-		<script>
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: false,
-				center: true,
-				mouseWheel: false,
-				progress: true,
-				history: true,
-				rollingLinks: false,
-
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					// { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					// { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					// { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-
-		</script>
+<script>
+	Reveal.initialize({
+		controls: true,
+		touch: true,
+		center: false,
+		transition: 'none',
+		width: "100%",
+		height: "100%",
+		margin: 0,
+		minScale: 1,
+		maxScale: 1,
+		dependencies: [{
+				src: 'plugin/markdown/marked.js'
+			},
+			{
+				src: 'plugin/markdown/markdown.js'
+			},
+			{
+				src: 'plugin/notes/notes.js',
+				async: true
+			},
+			{
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				callback: function () {
+					hljs.initHighlightingOnLoad();
+				}
+			}
+		]
+	});
+</script>
 
 	</body>
 </html>
-
